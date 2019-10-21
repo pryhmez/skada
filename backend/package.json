@@ -1,0 +1,16 @@
+{
+  "name": "skadabackend",
+  "version": "1.0.0",
+  "description": "logistics for ssmall scale eccommerce",
+  "main": "server.js",
+  "scripts": {
+    "test": "server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.7.5",
+    "nodemon": "^1.19.4"
+  }
+}
