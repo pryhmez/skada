@@ -8,14 +8,15 @@ var databaseconfig = require('./config/db');
 var appRoutes = require("./routes")
 var Router = require("express").Router();
 
+// app.use(morgan('dev));
 app.use(express.json());
 // app.use(cors());
+app.use(express.static("/public"));
 app.use(express.urlencoded({extended: false}))
 
 const server = http.createServer(app);
 
 app.use('/api', appRoutes(Router));
-// app.use(morgan());
 
 server.listen(port, () => {
 

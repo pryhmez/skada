@@ -1,11 +1,11 @@
-var {addUserService} = require('../services/userServices')
+var {addUser} = require('../services/userServices')
 
-module.exports = class userController {
-    
-    async addUser (req, res) {
+module.exports = function userController() {
+    this.addUser = (req, res) => {
+        
         console.log('aiie')
         console.log(req.body)
-        await addUserService(req.body).then(result => {
+        addUser(req.body).then(result => {
             res.send({success : true, message : 'user created', data : null})
         }).catch(error => {
             res.send({success: false, message : "could not user", data: error})
