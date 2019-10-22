@@ -1,0 +1,35 @@
+.navi {
+    width: 100%;
+    height: 120px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.navi div {
+    margin-right: 40px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+.span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media
+(max-width:800px){
+    .navi .span{
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 100px;
+        background: rgba(0, 0, 0, 0.747);
+        padding:30px 0px ;
+    }
+    .span div {
+        margin-top: 20px;
+        text-align: center;
+    }
+}

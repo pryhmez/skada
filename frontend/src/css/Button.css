@@ -1,0 +1,8 @@
+.navbtn {
+    font-family: 'Lato', sans-serif;
+    outline: none;
+}
+.navbtn :hover {
+    background: whitesmoke;
+    color:#2F80ED ;
+}
