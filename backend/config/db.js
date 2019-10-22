@@ -1,14 +1,16 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-function initDb (){
-    mongoose.connect('mongodb://127.0.0.1:27017/learnable', {useNewUrlParser: true, useCreateIndex: true}, function (error){
-        if(error) {
-            console.log('not connected to DB')
-        }else {
-            console.log('connected to db ohhh')
-        }
-    })
+function initDb() {
+	mongoose.connect(
+		'mongodb+srv://Isaac:isaac123@skada-cslhn.mongodb.net/test?retryWrites=true&w=majority',
+		{
+			useNewUrlParser: true,
+			useCreateIndex: true
+		},
+		(error) => {
+			error ? console.log(`not connected to Databse`, error) : console.log(`connected to Databse`);
+		}
+	);
 }
 
-
-module.exports = initDb
+module.exports = initDb;
