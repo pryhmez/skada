@@ -5,7 +5,8 @@ function initDb() {
 		'mongodb+srv://Isaac:isaac123@skada-cslhn.mongodb.net/test?retryWrites=true&w=majority',
 		{
 			useNewUrlParser: true,
-			useCreateIndex: true
+			useCreateIndex: true,
+			useUnifiedTopology: true 
 		},
 		(error) => {
 			error ? console.log(`not connected to Databse`, error) : console.log(`connected to Databse`);

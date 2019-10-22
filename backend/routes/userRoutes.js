@@ -3,6 +3,9 @@ var userController = require("../controllers/userController");
 
 module.exports = function() {
     var userCtl = new userController();
-    router.post("/", userCtl.addUser);
-    return router;
+    console.log('hi')
+    console.log(userCtl.addUser)
+    router.post("/signUp", userCtl.addUser);
+    console.log('gee')
+    // return router;
 }

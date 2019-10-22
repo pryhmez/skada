@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var http = require('http');
 // var cors = require('cors');
-// var morgan = require('morgan');
+//var morgan = require('morgan');
 var port = process.env.PORT || 8080;
 var databaseconfig = require('./config/db');
 var appRoutes = require("./routes")
@@ -15,8 +15,7 @@ app.use(express.urlencoded({extended: false}))
 const server = http.createServer(app);
 
 app.use('/api', appRoutes(Router));
-
-app.use(logger('dev'));
+// app.use(morgan());
 
 server.listen(port, () => {
 
@@ -33,9 +32,6 @@ server.on('close', () => {
 
 })
 
-server.on('connection', () => {
-
-})
 
 function listening () {
     databaseconfig();
