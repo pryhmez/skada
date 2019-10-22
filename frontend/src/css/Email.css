@@ -1,0 +1,24 @@
+.landinput {
+    display: flex;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+}
+.landinput input {
+    width: 40%;
+    height: 50px;
+    background: whitesmoke;
+    border: none;
+    padding-left: 20px;
+}
+.landinput input::placeholder{
+    color:#2F80ED ;
+    padding-left: 0px;
+    font-family: 'Lato', sans-serif;
+}
+.landinput button {
+    width: 100px;
+    background: #2F80ED;
+    padding: 19px 10px;
+    border: none;
+    color: whitesmoke;
+}
