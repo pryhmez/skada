@@ -1,13 +1,13 @@
-var { addUser } = require('../services/userServices');
-const jwt = require('jsonwebtoken');
+
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken")
 
 module.exports = function userController() {
-    this.addUser = (req, res) => {
+    this.signUp = (req, res) => {
         // console.log(req.body)
         bcrypt.hash(req.body.password, 10, (err, hash) => {
 
-            addUser(req.body, hash).then(result => {
+            signUpUser(req.body, hash).then(result => {
                 res.send({
                     success: true,
                     message: 'user created',
@@ -24,8 +24,9 @@ module.exports = function userController() {
 
 
     this.login = (req, res) => {
-
+        console.log('got here')
         loginUser(req.body).then(user => {
+            console.log(user)
             bcrypt.compare(req.body.password, user[0].password, (err, result) => {
                 if (err) {
                     res.send(401).json({
