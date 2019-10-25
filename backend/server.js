@@ -11,10 +11,12 @@ var Router = require("express").Router();
 // app.use(morgan('dev));
 app.use(express.json());
 // app.use(cors());
-app.use(express.static("/public"));
+app.use(express.static("public"));
 app.use(express.urlencoded({extended: false}))
 
 const server = http.createServer(app);
+
+// app.all("*", (request, response) => {response.send("k,rhherth")})
 
 app.use('/api', appRoutes(Router));
 
