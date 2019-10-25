@@ -1,9 +1,9 @@
-var userModel = require('../models/users')
+const userModel = require('../models/users')
 
 
 
-var addUser = function(userData, hash) {
-    var newUser = new userModel(
+const signUpUser = function(userData, hash) {
+    const newUser = new userModel(
         {
             firstName: userData.firstname,
             lastName: userData.lastname,
@@ -19,9 +19,12 @@ var addUser = function(userData, hash) {
         return newUser.save();
 }
 
-var loginUser = function (userData) {
+const loginUser = function (userData) {
     return userModel.find({email: userData.email})
 }
 
 
-module.exports.addUser = addUser;
+module.exports = {
+    signUpUser: signUpUser,
+    loginUser: loginUser
+}
