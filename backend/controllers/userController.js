@@ -1,4 +1,5 @@
-var { addUser } = require('../services/userServices')
+var { addUser } = require('../services/userServices');
+const jwt = require('jsonwebtoken');
 const bcrypt = require("bcrypt");
 
 module.exports = function userController() {
@@ -43,7 +44,7 @@ module.exports = function userController() {
                     }
                     );
 
-                    res.send(200).json({
+                    res.status(200).json({
                         message: "login successful",
                         token: token,
                         user: user[0]
