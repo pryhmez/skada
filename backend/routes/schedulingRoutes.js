@@ -6,7 +6,7 @@ module.exports = function() {
    
     var schedulingCtl = new schedulingController();
     
-    router.post("/create", schedulingCtl.create);
+    router.post("/create", checkAuth, schedulingCtl.create);
     // router.post("/login", schedulingCtl.getSchedules);
     
     return router;

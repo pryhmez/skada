@@ -1,6 +1,7 @@
 
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken")
+const {signUpUser, loginUser} = require("../services/userServices")
 
 module.exports = function userController() {
     this.signUp = (req, res) => {
