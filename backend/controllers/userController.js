@@ -29,13 +29,12 @@ module.exports = function userController() {
 		});
 	};
 
-	this.login = (req, res) => {
-		console.log('got here');
+	this.login = (req, res,next) => {
 		loginUser(req.body).then((user) => {
-			console.log(user);
 			bcrypt.compare(req.body.password, user[0].password, (err, result) => {
-				if (err) {
-					return next(new AppError({err}, 401));					
+				const errors = validationResult(req);
+				if (errors) {
+					return next(new AppError({errors}, 401));					
 				}
 				if (result) {
 					const token = jwt.sign(
@@ -55,9 +54,11 @@ module.exports = function userController() {
 						user: user[0]
 					});
 				} else {
-					return next(new AppError('login failed', 401));
+					return next(new AppError('login failed, please enter correct Username and password', 401));
 				}
 			});
+		}).catch((error) => {
+			return next(new AppError(error, 400));
 		});
 	};
 };
