@@ -2,8 +2,10 @@ const userModel = require('../models/users')
 
 
 
-const signUpUser = function(userData, hash) {
-    const newUser = new userModel(
+const signUpUser = async function(userData, hash) {
+    let user  =  await userModel.findOne({ email: userData.email })
+    if (user) return null;
+    const newUser = await new userModel(
         {
             firstName: userData.firstname,
             lastName: userData.lastname,
@@ -16,6 +18,7 @@ const signUpUser = function(userData, hash) {
             businessCategory: userData.businesscategory
 
         });
+        console.log('igothere  still')
         return newUser.save();
 }
 
