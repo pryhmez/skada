@@ -2,7 +2,7 @@ var { createSchedule } = require('../services/schedulingServices')
 
 module.exports = function schedulingController() {
     this.create = (req, res) => {
-        // console.log(req.body)
+        console.log(req.file)
 
             createSchedule(req.body).then(result => {
                 res.send({

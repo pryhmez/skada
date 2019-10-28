@@ -26,6 +26,7 @@ var SchedulingSchema = new Schema({
     
 
     timeOfOrder : { type : Date, default: new Date()},
+    status : { type : String, default: "open"}
 })
 
 module.exports = mongoose.model('Schedule', SchedulingSchema)
