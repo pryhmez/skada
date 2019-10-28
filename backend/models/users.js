@@ -12,6 +12,11 @@ var UserSchema = new Schema({
     businessPhone: { type : String, required : true},
     businessType: { type : String, required : true},
     businessCategory: { type : Array, required : true},
+    cardDetails: {type: new Schema({
+        cardNumber: {type: Number, minlength: 0, maxlength: 255},
+        cardHolderName: {type: String, minlength: 0, maxlength: 255},
+        expiryDate: {type: Date}
+    })},
     createdDate : { type : Date, default: new Date()},
 })
 
