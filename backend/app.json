@@ -1,0 +1,6 @@
+{
+    "name": "skada",
+    "description": "an eccomerce logistics app",
+    "repository": "https://github.com/pryhmez/skada/tree/master/backend",
+    "keywords": ["node", "express"]
+}
