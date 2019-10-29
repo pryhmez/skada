@@ -12,7 +12,16 @@ module.exports = function () {
         checkAuth,
         upload.single("goodImg"),
         schedulingCtl.create);
-    // router.post("/login", schedulingCtl.getSchedules);
+
+    router.get("/get",
+        // checkAuth,
+        schedulingCtl.get);
+
+    router.post("/getall", schedulingCtl.getAll);
+
+    router.post("/delete", schedulingCtl.delete);
+
+    router.post("/update", schedulingCtl.update);
 
     return router;
 }

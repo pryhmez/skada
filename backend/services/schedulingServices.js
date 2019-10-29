@@ -32,5 +32,29 @@ var createSchedule = function (scheduleData) {
     return newSchedule.save();
 }
 
+var getSchedule = function (scheduleQuery) {
+    return schedulingModel.find({_id: scheduleQuery.scheduleId})
+}
+
+var getAllSchedules = function () {
+    return schedulingModel.find({sendersId: scheduleQuery.sendersId})
+}
+
+var deleteSchedule = function () {
+
+}
+
+var updateSchedule = function () {
+
+}
+
 
 module.exports.createSchedule = createSchedule;
+
+module.exports = {
+   createSchedule,
+   getSchedule,
+   getAllSchedules,
+   deleteSchedule,
+   updateSchedule
+}
