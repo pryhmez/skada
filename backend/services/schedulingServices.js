@@ -1,8 +1,17 @@
 var schedulingModel = require('../models/scheduleModel')
+var cloud = require('../config/cloudinaryConfig');
 
 
+var createSchedule = function (scheduleData, scheduleFile) {
+    cloud.uploads(scheduleFile.path).then((result) => {
+        var imageDetails = {
+        imageName: req.body.imageName,
+        cloudImage: result.url,
+        imageId: result.id
+        }
+        console.log(imageDetails)
+    })
 
-var createSchedule = function (scheduleData) {
 
     var newSchedule = new schedulingModel(
         {
@@ -27,6 +36,8 @@ var createSchedule = function (scheduleData) {
             sendersEmail: scheduleData.sendersEmail,
             sendersPhone: scheduleData.sendersPhone,
 
+            cloudImage: scheduleFile.path
+
         }
     );
     return newSchedule.save();
@@ -41,7 +52,7 @@ var getAllSchedules = function () {
 }
 
 var deleteSchedule = function () {
-
+    return schedulingModel.deleteOne({_id: scheduleQuery.scheduleId})
 }
 
 var updateSchedule = function () {

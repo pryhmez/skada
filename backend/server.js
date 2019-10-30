@@ -1,8 +1,8 @@
 var express = require('express');
 var app = express();
 var http = require('http');
-// var cors = require('cors');
-//var morgan = require('morgan');
+var cors = require('cors');
+var morgan = require('morgan');
 const dotenv = require('dotenv');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -12,10 +12,11 @@ var appRoutes = require("./routes")
 var Router = require("express").Router();
 
 dotenv.config({ path: './config/config.env' });
-// app.use(morgan('dev));
+app.use(morgan('dev'));
 app.use(express.json());
-// app.use(cors());
-app.use(express.static("public"));
+app.use(cors());
+app.use( '/uploads', express.static('uploads'));
+
 app.use(express.urlencoded({extended: false}))
 
 const server = http.createServer(app);

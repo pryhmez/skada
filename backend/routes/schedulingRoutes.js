@@ -2,14 +2,15 @@ var router = require('express').Router();
 var checkAuth = require('../middleWares/checkAuth')
 var schedulingController = require("../controllers/schedulingController");
 const multer = require("multer");
-const upload = multer({ dest: "uploads/" });
+// const upload = multer({ dest: "uploads/" });
+const upload = require("../config/multerCofig")
 
 module.exports = function () {
 
     var schedulingCtl = new schedulingController();
 
     router.post("/create",
-        checkAuth,
+        // checkAuth,
         upload.single("goodImg"),
         schedulingCtl.create);
 
