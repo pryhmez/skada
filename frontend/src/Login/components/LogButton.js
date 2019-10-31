@@ -5,7 +5,7 @@ class Button extends Component {
     state = {  }
     render() { 
         return ( 
-            <button className="con">Continue</button>
+            <button className="con">{this.props.name}</button>
          );
     }
 }
