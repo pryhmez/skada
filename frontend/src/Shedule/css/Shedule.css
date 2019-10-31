@@ -1,0 +1,86 @@
+
+.del-cont {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: #4F4F4F;
+}
+.del {
+    width: 85%;
+    background: white;
+    padding: 10px 0px;
+    margin-top: 30px;
+}
+.pick {
+    display: flex;
+    justify-content:space-center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0px 50px 20px 50px;
+}
+.pic {
+    width: 280px;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+.time {
+    font-size: 0.8rem;
+    display: flex;
+    color: #C4C4C4;
+    margin-top: 5px;
+}
+
+
+.pac {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.pack {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 85%;
+    background: white;
+}
+.pack-img {
+    width: 300px;
+    height: 250px;
+    background-image: url("../shpic/1.jpg");
+    background-size: cover;
+}
+.three {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.three aside {
+    margin-right: 60px;
+}
+
+
+.send-cont {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.send {
+    width: 85%;
+    background: white;
+    padding: 20px 0px;
+}
+@media (max-width:1300px){
+    .three aside {
+        margin-left: 60px;
+        margin-top: 20px;
+        width: 100%;
+    }
+    .des {
+        margin-left: 60px;
+    }
+    .pack-side {
+        padding-bottom:50px;
+    } 
+}

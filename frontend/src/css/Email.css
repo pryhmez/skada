@@ -4,7 +4,7 @@
     font-family: 'Lato', sans-serif;
 }
 .landinput input {
-    width: 40%;
+    width: 400px;
     height: 50px;
     background: whitesmoke;
     border: none;
@@ -16,8 +16,8 @@
     font-family: 'Lato', sans-serif;
 }
 .landinput button {
-    width: 100px;
-    background: #2F80ED;
+    width: 150px;
+    background: rgb(33, 96, 179);
     padding: 19px 10px;
     border: none;
     color: whitesmoke;
