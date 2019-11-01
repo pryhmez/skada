@@ -1,0 +1,89 @@
+.side-nav {
+    width:300px;
+    height: 100vh;
+    background: #2F80ED;
+    box-shadow: 0px 1.2px 3.6px rgba(0, 0, 0, 0.05), 0px 6.4px 14.4px rgba(0, 0, 0, 0.052);
+    position: fixed;
+    top: 0; 
+    left: 0% ;
+    font-family: 'Lato', sans-serif;
+    z-index: 8;
+}
+
+ .header {
+    font-size: 21px;
+    color: white;
+    letter-spacing: 1px;
+}
+.lin {
+    width: 100%;
+    color: white;
+}
+.navline {
+    width: 100%;
+}
+.active {
+    background: #1068DE;
+    border-left: 4px solid white;
+    padding:15px 67% 15px 35%;
+    margin-left: -36%;
+    position: relative;
+    right: 0;
+}
+.active1 {
+    background: #1068DE;
+    border-left: 4px solid white;
+    padding:15px 55% 15px 35%;
+    margin-left: -36%;
+    position: relative;
+    right: 0;
+}
+.active2 {
+    background: #1068DE;
+    border-left: 4px solid white;
+    padding:15px 63% 15px 35%;
+    margin-left: -36%;
+    position: relative;
+    right: 0;
+}
+.active4 {
+    background: #1068DE;
+    border-left: 4px solid white;
+    padding:15px 40% 15px 35%;
+    margin-left: -36%;
+    position: relative;
+    right: 0;
+}
+/* .active {
+    background: #1068DE;
+    padding: 15px 113px;
+    border-left: 4px solid white;
+} */
+
+
+/*
+.header side {
+    font-weight: 800;
+}
+.side-content aside {
+    font-size: 15px;
+    color: white;
+    margin-top: 30px;
+}
+.shBut {
+    font-family: 'Lato', sans-serif;
+}
+.sod {
+    display: none;
+}
+.navCont {
+    width: 100%; 
+}
+.navline {
+    width: 100%;
+    height: 40px;
+    background: #1068DE;
+} */
+
+
+

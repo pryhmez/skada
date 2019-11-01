@@ -1,0 +1,73 @@
+.succ-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 92vh;
+}
+
+.succ {
+    display: flex;
+    justify-content: center;
+    width: 85%;
+    flex-wrap: wrap;
+}
+.succ-pick {
+    width: 250px;
+    color: #4F4F4F;
+    padding: 20px 60px;
+    background: white;
+    position: relative;
+}
+.succ-pick-img {
+    width: 220px;
+    height: 150px;
+    margin-top: 50px;
+    background-image: url("../ill/3.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 20px auto;
+}
+.picko {
+    position: absolute;
+    top: 45%;
+    right: -18px;
+    background-image: url("../ill/Vector.png");
+    background-size:cover ;
+    width: 60px;
+    height: 40px;
+}
+.suck-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:368px;
+    height: 280px;
+    background: #2F80ED;
+    color: white;
+}
+.suck-text aside {
+    text-align: center;
+}
+.suck-text button {
+    background: white;
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2F80ED;
+    border: none;
+    margin: 10px auto;
+    width: 100px;
+    border-radius: 2px;
+}
+
+@media (max-width:900px){
+    .picko {
+        display: none;
+    }
+    .succ-cont {
+        height: 90vh;
+    }
+}
