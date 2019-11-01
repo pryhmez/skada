@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const AppError = require('../utils/appError');
 
 module.exports = (req, res, next) => {
 
@@ -14,16 +15,11 @@ module.exports = (req, res, next) => {
             // req.userData = decoded;
             next();
         } else {
-            res.status(401).send({
-                message: "access denied session ended please signin again"
-            })
+            return next(new AppError('access denied session ended please signin again', 401));
         }
     } catch (err) {
         if (err) {
-            return res.status(402).send({
-                message: "Auth Failed" + err + token
-
-            });
+            return next(new AppError(`Authentication failed ${err} + ${token}`, 402));
         }
     }
 
