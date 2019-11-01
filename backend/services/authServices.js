@@ -1,4 +1,6 @@
 const userModel = require('../models/users')
+const tokenModel = require('../models/tokenModel')
+
 
 const signUpUser = async function(userData, hash) {
     let user  =  await userModel.findOne({ email: userData.email })
@@ -16,16 +18,36 @@ const signUpUser = async function(userData, hash) {
             businessCategory: userData.businesscategory
 
         });
-        console.log('igothere  still')
         return newUser.save();
 }
 
-const loginUser = function (userData) {
-    return userModel.find({email: userData.email})
+const loginUser =  function (userData) {
+    console.log(userData)
+    const user =  userModel.findOne({email: userData.email});
+    return user
 }
 
+const verifyUserAccountToken = async function(_userId, token){
+   const oldTokenCollection  = await tokenModel.findOne({ _userId })
+        if(oldTokenCollection) {
+            const { token: oldToken } = oldTokenCollection;
+            await tokenModel.deleteOne({ token : oldToken })
+        }
+
+    const userToken = new tokenModel({
+        _userId,
+        token
+    })
+    const res = await userToken.save();
+    return res
+}
+const confirmSignUp = function( token ) {
+    return tokenModel.findOne({ token })
+}
 
 module.exports = {
-    signUpUser: signUpUser,
-    loginUser: loginUser
+    signUpUser,
+    loginUser,
+    verifyUserAccountToken,
+    confirmSignUp,
 }

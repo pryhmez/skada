@@ -7,6 +7,8 @@ module.exports = function() {
     var authCtl = new authController();
     
     router.post("/signUp", signUpValidation , authCtl.signUp);
+    router.get('/confirmation/:token', authCtl.confirmSignUp);
+    router.post('/resend', authCtl.resendConfirmToken);
     router.post("/login", loginValidation, authCtl.login);
     
     return router;

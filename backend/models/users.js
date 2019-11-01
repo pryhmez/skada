@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-const validator = require('validator');
 
 var UserSchema = new Schema({
 	firstName: { type: String, required: true },
@@ -20,7 +19,8 @@ var UserSchema = new Schema({
 	},
 	businessType: { type: String, required: true },
 	businessCategory: { type: Array, required: true },
-	createdDate: { type: Date, default: new Date() }
+	createdDate: { type: Date, default: new Date() },
+	isVerified: { type: Boolean, default: false }
 });
 
-module.exports = mongoose.model('Users', UserSchema);
+module.exports = mongoose.model('User', UserSchema);
