@@ -85,14 +85,14 @@ module.exports = function authController() {
 				.then((user) => {
 					console.log(user);
 					if (!user) return next(new AppError('We were unable to find a user for this token.', 400));
-					if (user.isVerified) return res.redirect('https://google.com');
+					if (user.isVerified) return res.redirect('https://skada.netlify.com/login');
 
 					// Verify and save the user
 					user.isVerified = true;
 					saveChangesToUser(user)
 						.then((verifiedUser) => {
 							// res.status(200).send('The account has been verified. Please log in.');
-							res.redirect('https://google.com');
+							res.redirect('https://skada.netlify.com/login');
 						})
 						.catch((error) => {
 							return next(new AppError(error, 500));
