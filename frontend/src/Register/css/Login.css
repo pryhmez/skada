@@ -1,0 +1,134 @@
+.loginwrapp {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blue {
+    width: 45%;
+    height: 100vh;
+    background: url("../img/Login.jpg");
+    background-size: cover;
+    display: block;
+}
+.white {
+    width: 55%;
+    height: 100vh;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logtext {
+    /* padding: 0px 60px; */
+    position: relative;
+    width: 80%;
+}
+.logtext h1 {
+    color: #2F80ED;
+    font-size: 50px;
+    font-weight: 800;
+}
+.logtext span {
+    position: absolute;
+    margin-top: -30px;
+}
+form {
+    margin-top: 50px;
+}
+.name {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.name input {
+    padding: 14px;
+    background: white;
+    border: 1px solid #C4C4C4;
+    border-radius: 2px;
+    flex-wrap:wrap ;
+}
+.no {
+    width: 350px;
+}
+.nv {
+    width:165px
+}
+.name input::placeholder {
+    color: #C4C4C4;
+    font-family: 'Lato', sans-serif;
+}
+.na {
+    padding: 14px;
+    background: white;
+    border: 1px solid #C4C4C4;
+    border-radius: 2px;
+    margin-top: 15px;
+    width: 95%;
+}
+.na::placeholder {
+    color: #C4C4C4;
+    font-family: 'Lato', sans-serif;
+}
+.bt {
+    display: flex;
+}
+.bt div {
+    flex: 1;
+}
+
+
+.foot {
+    margin-top: 50px;
+    color:#C4C4C4 ;
+    font-size: 16px;
+}
+pan {
+    color:#2F80ED;
+    cursor: pointer;
+}
+
+.log {
+    padding:20px 80px;
+}
+.tec {
+    width: 50%;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    padding:60px 80px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+@media (max-width:1000px) {
+    .loginwrapp {
+        background: white;
+    }
+    .blue {
+        display: none;
+    }
+    .name {
+        display:block;
+    }
+    .name input {
+        margin-top: 20px;
+    }
+    .logtext {
+        width:100%;
+    }
+    .no,.nv,.na {
+        width: 100%;
+    }
+    .bt div {
+        flex: 0.6;
+    }
+    .v {
+        text-align: center;
+    }
+    .logtext span {
+        width: 100%;
+        margin:-30px auto;
+    }
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ProductConsumer } from "../../Context";
+import { ProductConsumer } from "../../Context/Context";
 import Navi from "./Navi";
 import Side from "./DashSide"
 import "../css/Dash.css"

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ProductConsumer} from "../../Context"
+import {ProductConsumer} from "../../Context/Context"
 import "../css/Stat.css"
 
 class Statboard extends Component {

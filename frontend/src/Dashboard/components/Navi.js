@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {ProductConsumer} from "../../Context"
+import {ProductConsumer} from "../../Context/Context"
 import Logo from "../../components/Logo";
 import Button from "./DashButton"
 import "../css/Navi.css";

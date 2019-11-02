@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Succ from "./Succ"
 import "../css/SheduleCom.css";
-import {ProductConsumer} from "../../Context";
+import {ProductConsumer} from "../../Context/Context";
 import Nav from "../../Dashboard/components/Navi";
 
 

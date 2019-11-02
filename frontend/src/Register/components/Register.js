@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component,useContext } from 'react';
 import {Link} from "react-router-dom"
-import Button from "../../Login/components/LogButton";
+import Button from "./RegisterButton";
 import Logo from "../../components/Logo";
 import Drop from "./DropDown"
 import "../css/Register.css"
+import AuthContext from "../../Context/auth/authContext";
 
 class Register extends Component {
     constructor(props){
@@ -36,11 +37,13 @@ class Register extends Component {
         const isPhoneValid = (/^0[7-9][0-1]\d{8}$/g).test(businessphoneno);
         if(isPhoneValid) {
             const userInfo = this.state
-            this.props.history.push();
-            this.props.history.push({
-                pathname: '/register2',
-                state: { userInfo }
-              })
+            // this.props.history.push({
+            //     pathname: '/register2',
+            //     state: { userInfo }
+            //   })
+            const authContext = useContext(AuthContext)
+            const {register} = authContext;
+            register(this.state)
         } else {
             alert("I, victor promise to fix or it turn to a Bed bug")
            
