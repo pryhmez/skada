@@ -1,0 +1,34 @@
+.vr img{
+    -webkit-animation: bounce 2s forwards;
+            animation: bounce 2s forwards;
+}
+
+@-webkit-keyframes bounce {
+    0% {
+        -webkit-transform: scale(0.9);
+                transform: scale(0.9);
+    }
+    50% {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+    100% {
+        -webkit-transform: scale(1.0);
+                transform: scale(1.0);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        -webkit-transform: scale(0.9);
+                transform: scale(0.9);
+    }
+    50% {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+    100% {
+        -webkit-transform: scale(1.0);
+                transform: scale(1.0);
+    }
+}
