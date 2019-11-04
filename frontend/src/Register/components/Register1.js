@@ -7,8 +7,8 @@ import "../css/Login.css"
 class Login extends Component {
     state = { 
         firstname:'',
-        secondname:'',
-        phonenumber:'',
+        lastname:'',
+        phone:'',
         email:'',
         password:''
     }
@@ -20,8 +20,8 @@ class Login extends Component {
 
     handleSubmit=(e)=>{
         e.preventDefault()
-        const { phonenumber } = this.state;
-        const isPhoneValid = (/^0[7-9][0-1]\d{8}$/g).test(phonenumber);
+        const { phone } = this.state;
+        const isPhoneValid = (/^0[7-9][0-1]\d{8}$/g).test(phone);
         if(isPhoneValid) {
             const userInfo = this.state
             this.props.history.push();
@@ -51,9 +51,9 @@ class Login extends Component {
                         <form onSubmit={this.handleSubmit}>
                             <div className="name">
                                 <input required className='no' name='firstname' onChange={this.handleChange} placeholder="First Name"></input>
-                                <input required className='nv' name='secondname' onChange={this.handleChange}placeholder="second Name"></input>
+                                <input required className='nv' name='lastname' onChange={this.handleChange}placeholder="second Name"></input>
                             </div>
-                            <input required className="na" name='phonenumber' onChange={this.handleChange} placeholder="Phone Number eg 081"></input>
+                            <input required className="na" name='phone' onChange={this.handleChange} placeholder="Phone Number eg 081"></input>
                             <input required className="na" name='email' onChange={this.handleChange} placeholder="Email Address" type='email'></input>
                             <input required className="na" pattern=".{8,}"  name='password' onChange={this.handleChange} placeholder="Password" type="password" title="3 characters minimum"></input>
                             <div className="bt"><Button name={"Continue"}/></div>

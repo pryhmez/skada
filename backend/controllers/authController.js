@@ -11,20 +11,28 @@ const nodemailer = require('nodemailer');
 
 module.exports = function authController() {
 	this.signUp = (req, res, next) => {
+		console.log(req.body, "from the server")
 		bcrypt.hash(req.body.password, 10, (err, hash) => {
+		
 			const errors = validationResult(req);
 			if (!errors.isEmpty()) {
-				return next(new AppError({ errors: errors.array() }, 400));
+				console.log("hiiiiiiiiiiiiiiiiiii")
+				console.log(errors)
+				return next(new AppError(errors, 400));
 			}
+			console.log("hellooooooooooooo")
 			signUpUser(req.body, hash)
 				.then((user) => {
 					if (user) {
+						console.log("%%%%%%%%%%%%%%%%%%%%%%%")
 						this.sendEmailWithToken(user,req, res, next);
 					} else {
 						return next(new AppError('User already exists with this email address, please Login', 400));
+					
 					}
 				})
 				.catch((error) => {
+					console.log("***********************")
 					return next(new AppError(error, 400));
 				});
 		});
@@ -148,7 +156,7 @@ module.exports = function authController() {
 						return next(new AppError(err.message, 500));
 					}
 					res.status(200).json({
-						success: true,
+						status: true,
 						message: 'A verification email has been sent to ' + user.email + '.'
 					});
 				});

@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var http = require('http');
-// var cors = require('cors');
+var cors = require('cors');
 //var morgan = require('morgan');
 const dotenv = require('dotenv');
 const AppError = require('./utils/appError');
@@ -11,12 +11,20 @@ var databaseconfig = require('./config/db');
 var appRoutes = require("./routes")
 var Router = require("express").Router();
 
+var corsOptions = {
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  }
+
 dotenv.config({ path: './config/config.env' });
+app.use(cors(corsOptions));
+
 // app.use(morgan('dev));
 app.use(express.json());
-// app.use(cors());
-app.use(express.static("public"));
 app.use(express.urlencoded({extended: false}))
+
+app.use(express.static("public"));
+
 
 const server = http.createServer(app);
 
@@ -36,13 +44,13 @@ server.listen(port, () => {
 
 server.on('listening', listening)
 
-server.on('error', () => {
+// server.on('error', () => {
 
-})
+// })
 
-server.on('close', () => {
+// server.on('close', () => {
 
-})
+// })
 
 
 function listening () {

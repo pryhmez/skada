@@ -9,28 +9,51 @@ const AuthState=(props)=>{
         token : null,
         msg: null,
         isAuth : null,
+        status: null,
         user : null,
         error : null,
         loading : true 
     }
     const [state,dispatch] = useReducer(authReducer,initailState)
-    const register=async(registerData)=>{
+    const register= async (registerData)=>{
+        console.log(registerData, "Registration info")
         const config = {
             headers : {
-                "Content-Type" : 'application/json'
+                'Content-Type': 'application/json'
             }
         }
+
+        console.log(registerData)
+
+        
         try {
-            const response = await axios.post('/api/users/signup',registerData,config)
-            console.log(response)
-            dispatch({
-                type : REGISTER_SUCCESS,
-                msg : response.message
+            const response = await  fetch("http://localhost:8080/api/user/signup", {
+                method:"post",
+                headers: config.headers,
+                body: JSON.stringify(registerData)
             })
+            const res = await response.json()
+            console.log("=====================")
+            console.log(res)
+            console.log("=====================")
+            
+            if(res.status === true){
+                dispatch({
+                    type : REGISTER_SUCCESS,
+                    payload: res,
+                })
+            } else {
+                dispatch({
+                    type : REGISTER_FAILED,
+                    payload: res
+                })
+            }
+           
         } catch (error) {
+            console.log(error, "Error block")
             dispatch({
                 type : REGISTER_FAILED,
-                msg : error
+                payload : error
             })
         }
     }
@@ -39,7 +62,8 @@ const AuthState=(props)=>{
             {
                 token : state.token,
                 isAuth : state.isAuth,
-                msg : state.msg,
+                status: state.status,
+                message : state.msg,
                 user : state.user,
                 error : state.error,
                 loading : state.true,
