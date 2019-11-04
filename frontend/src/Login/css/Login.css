@@ -87,6 +87,7 @@ form {
 }
 pan {
     color:#2F80ED;
+    cursor: pointer;
 }
 
 .log {
@@ -102,6 +103,9 @@ pan {
 }
 
 @media (max-width:1000px) {
+    .loginwrapp {
+        background: white;
+    }
     .blue {
         display: none;
     }

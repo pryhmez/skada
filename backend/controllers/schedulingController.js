@@ -1,4 +1,4 @@
-var { createSchedule } = require('../services/schedulingServices')
+var { createSchedule, getSchedule, getAllSchedules, deleteSchedule, updateSchedule } = require('../services/schedulingServices')
 
 module.exports = function schedulingController() {
     this.create = (req, res) => {
@@ -18,4 +18,32 @@ module.exports = function schedulingController() {
             })
         
     }
+
+    this.get = (req, res) => {
+        getSchedule(req.query).then(result => {
+            res.send({
+                success: true,
+                data: result
+            })
+        })
+    }
+
+    this.getAll = (req, res) => {
+        getAllSchedules(req.query).then(result => {
+            res.send({
+                success: true,
+                data: result
+            })
+        })
+    }
+
+    this.delete = (req, res) => {
+
+    }
+
+    this.update = (req, res) => {
+
+    }
+
+
 }
