@@ -1,13 +1,13 @@
 const router = require('express').Router();
 const userController = require("../controllers/userController");
-const userValidation   =  require("../middleWares/userValidation")
+const {  userSignUpValidation, userLoginValidation }  =  require("../middleWares/userValidation");
 
 module.exports = function() {
    
     var userCtl = new userController();
     
-    router.post("/signUp",  userValidation("create user"), userCtl.signUp);
-    router.post("/login", userCtl.login);
+    router.post("/signUp", userSignUpValidation , userCtl.signUp);
+    router.post("/login", userLoginValidation, userCtl.login);
     
     return router;
 }
