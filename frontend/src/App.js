@@ -9,7 +9,9 @@ import Shedule from "./Shedule/components/Shedule"
 import Complete from "./SheduleComplete/components/Complete";
 import Tracking from "./Track/components/Track";
 import DeliveryStatus from "./DeliveryStatus/DeliveryStatus";
-import AuthState from "../src/Context/auth/authState"
+import AuthState from "../src/Context/auth/authState";
+import Login from "../src/LoginFolder/components/Login";
+import RegisterVerified from "../src/RegisterVerified/components/RegisterVerified"
 
 
 
@@ -26,6 +28,8 @@ function App() {
       <Route path="/complete" component={Complete}></Route>
       <Route path="/tracking" component={Tracking}></Route>
       <Route path="/delivery status" component={DeliveryStatus}></Route>
+      <Route path="/login" component={Login}></Route>
+      <Route path="/register verified" component={RegisterVerified}></Route>
       </Switch>
     </>
     </AuthState>
