@@ -22,6 +22,7 @@ const AuthState=(props)=>{
         }
         try {
             const response = await axios.post('/api/users/signup',registerData,config)
+            console.log(response)
             dispatch({
                 type : REGISTER_SUCCESS,
                 msg : response.message
