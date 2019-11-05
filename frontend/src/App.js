@@ -11,7 +11,8 @@ import Tracking from "./Track/components/Track";
 import DeliveryStatus from "./DeliveryStatus/DeliveryStatus";
 import AuthState from "../src/Context/auth/authState";
 import Login from "../src/LoginFolder/components/Login";
-import RegisterVerified from "../src/RegisterVerified/components/RegisterVerified"
+import RegisterVerified from "../src/RegisterVerified/components/RegisterVerified";
+import Manage from "../src/Manage Wallet/components/Manage"
 
 
 
@@ -29,7 +30,8 @@ function App() {
       <Route path="/tracking" component={Tracking}></Route>
       <Route path="/delivery status" component={DeliveryStatus}></Route>
       <Route path="/login" component={Login}></Route>
-      <Route path="/register verified" component={RegisterVerified}></Route>
+      <Route path="/registerverified" component={RegisterVerified}></Route>
+      <Route path="/managewallet" component={Manage}></Route>
       </Switch>
     </>
     </AuthState>

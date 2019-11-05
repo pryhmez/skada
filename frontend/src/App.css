@@ -1,3 +1,8 @@
 * {
     font-family: 'Pavanam', sans-serif;
 }
+:root {
+    --main-color: #2F80ED;
+    --text-color: #4F4F4F;
+    --border-color: #C4C4C4;
+}

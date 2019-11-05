@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Logo from "../../components/Logo";
-import Img from "../img/Vector.svg"
+import Img from "../img/Vector.svg";
+import "../css/RegisterVerified.css"
 
 class RegisterVerified extends Component {
     state = {  }

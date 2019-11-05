@@ -34,8 +34,8 @@ class Navi extends Component {
 
             },
             {
-                name:'Manage',
-                route:'',
+                name:'Manage wallet',
+                route:'managewallet',
                 active:'active3',
                 icon:Four
             },
