@@ -2,9 +2,8 @@ var { createSchedule, getSchedule, getAllSchedules, deleteSchedule, updateSchedu
 
 module.exports = function schedulingController() {
     this.create = (req, res) => {
-        console.log(req.file)
 
-            createSchedule(req.body).then(result => {
+           createSchedule(req.body).then(result => {
                 res.send({
                     success: true,
                     message: 'schedule created and booking done',

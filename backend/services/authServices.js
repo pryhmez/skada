@@ -3,7 +3,6 @@ const tokenModel = require('../models/tokenModel')
 
 
 const signUpUser = async function(userData, hash) {
-    console.log(userData, "from service")
     let user  =  await userModel.findOne({ email: userData.email })
     if (user) return null;
     const newUser = await new userModel(
@@ -23,7 +22,6 @@ const signUpUser = async function(userData, hash) {
 }
 
 const loginUser =  function (userData) {
-    console.log(userData)
     const user =  userModel.findOne({email: userData.email});
     return user
 }
