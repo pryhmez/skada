@@ -12,9 +12,10 @@ const nodemailer = require('nodemailer');
 module.exports = function authController() {
 	this.signUp = (req, res, next) => {
 		bcrypt.hash(req.body.password, 10, (err, hash) => {
+		
 			const errors = validationResult(req);
 			if (!errors.isEmpty()) {
-				return next(new AppError({ errors: errors.array() }, 400));
+				return next(new AppError(errors, 400));
 			}
 			signUpUser(req.body, hash)
 				.then((user) => {
@@ -22,6 +23,7 @@ module.exports = function authController() {
 						this.sendEmailWithToken(user,req, res, next);
 					} else {
 						return next(new AppError('User already exists with this email address, please Login', 400));
+					
 					}
 				})
 				.catch((error) => {
@@ -33,6 +35,9 @@ module.exports = function authController() {
 	this.login = (req, res, next) => {
 		loginUser(req.body)
 			.then((user) => {
+				if(!user) {
+					return next(new AppError('Incorrect Username or password', 401));
+				}
 				bcrypt.compare(req.body.password, user.password, (err, result) => {
 					const errors = validationResult(req);
 					if (!errors.isEmpty()) {
@@ -42,7 +47,13 @@ module.exports = function authController() {
 						return next(new AppError(err, 401));
 					}
 					if (!user.isVerified)
-						return next(new AppError('login failed, Your Account has not been verified', 401));
+					// const { email, businessName } = user;
+						 return res.status(200).json({
+							status: "pending",
+							message: 'Your account has not been verified, please verify your account or click on resend mail',
+							user: user
+							// user: user
+						});
 					if (result) {
 						const token = jwt.sign(
 							{
@@ -54,11 +65,12 @@ module.exports = function authController() {
 								expiresIn: '1h'
 							}
 						);
-
+						// let userData = Object.assign({}, user);
 						res.status(200).json({
+							status: true,
 							message: 'login successful',
 							token: token,
-							user: user
+							// user: user
 						});
 					} else {
 						return next(new AppError('login failed, please enter correct Username and password', 401));
@@ -69,13 +81,24 @@ module.exports = function authController() {
 				return next(new AppError(error, 500));
 			});
 	};
+	this.getLoggedInUser = (req, res, next) => {
+		findUserWithId(req.user)
+			.then((user) => {
+				if (!user) { return next(new AppError('We were unable to find a user for this token.', 400));
+			} else {
+				res.status(200).json({
+					status: true,
+					message: 'login successful',
+					user: user
+				});
+			}})
+			.catch((error) => {
+				return next(new AppError(error, 500));
+			});		
+	}
 	this.confirmSignUp = (req, res, next) => {
 		const token = req.params.token;
-		console.log(token);
 		confirmSignUp(token).then((userToken) => {
-			console.log('+++++++++++++++++++++++');
-			console.log(userToken);
-			console.log('++++++++++++++++++');
 			if (!userToken)
 				res.status(400).json({
 					success: 'fail',
@@ -83,16 +106,15 @@ module.exports = function authController() {
 				});
 			findUserWithId(userToken._userId)
 				.then((user) => {
-					console.log(user);
 					if (!user) return next(new AppError('We were unable to find a user for this token.', 400));
-					if (user.isVerified) return res.redirect('https://skada.netlify.com/login');
+					if (user.isVerified) return res.redirect('http://localhost:3000/login');
 
 					// Verify and save the user
 					user.isVerified = true;
 					saveChangesToUser(user)
 						.then((verifiedUser) => {
 							// res.status(200).send('The account has been verified. Please log in.');
-							res.redirect('https://skada.netlify.com/login');
+							res.redirect('http://localhost:3000/login');
 						})
 						.catch((error) => {
 							return next(new AppError(error, 500));
@@ -125,12 +147,10 @@ module.exports = function authController() {
 		const { _id } = user;
 		verifyUserAccountToken(_id, token)
 			.then((userToken) => {
-				console.log(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD);
 				const transporter = nodemailer.createTransport({
 					service: 'Sendgrid',
 					auth: { user: process.env.SENDGRID_USERNAME, pass: process.env.SENDGRID_PASSWORD }
 				});
-				console.log(user.email);
 				const mailOptions = {
 					from: 'no-reply@skada.com',
 					to: user.email,
@@ -148,7 +168,7 @@ module.exports = function authController() {
 						return next(new AppError(err.message, 500));
 					}
 					res.status(200).json({
-						success: true,
+						status: true,
 						message: 'A verification email has been sent to ' + user.email + '.'
 					});
 				});

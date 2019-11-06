@@ -6,17 +6,22 @@ body::-webkit-scrollbar-thumb {
 }
 .deliver-cont {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-top: 30px;
     color: #4F4F4F;
     position: relative;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif; 
 }
 .deliver {
     width: 86%;
     background:white;
-    box-shadow: 0px 1.2px 3.6px rgba(0, 0, 0, 0.05), 0px 6.4px 14.4px rgba(0, 0, 0, 0.052);
+    -webkit-box-shadow: 0px 1.2px 3.6px rgba(0, 0, 0, 0.05), 0px 6.4px 14.4px rgba(0, 0, 0, 0.052);
+            box-shadow: 0px 1.2px 3.6px rgba(0, 0, 0, 0.05), 0px 6.4px 14.4px rgba(0, 0, 0, 0.052);
     position: relative;
     padding-bottom: 20px;
 }
@@ -26,17 +31,25 @@ body::-webkit-scrollbar-thumb {
 }
 .over {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-top: 50px;
-    flex-wrap:wrap ;
+    -ms-flex-wrap:wrap ;
+        flex-wrap:wrap ;
     text-align: center;
 }
 .over div {
     width: 300px;
     height: 120px;
-    flex-wrap:wrap ;
+    -ms-flex-wrap:wrap ;
+        flex-wrap:wrap ;
     text-align: center;
 }
 .over h1 {

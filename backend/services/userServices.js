@@ -1,7 +1,7 @@
 const userModel = require('../models/users')
 
 const findUserWithId = function( _id ) {
-    return userModel.findOne({ _id })
+    return userModel.findOne({ _id }).select('-password')
 }
 const findUserWithEmail = function( email ) {
     return userModel.findOne({ email })
