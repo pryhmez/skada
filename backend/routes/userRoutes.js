@@ -6,7 +6,7 @@ module.exports = function() {
    
     var userCtl = new userController();
     
-    router.post("/signUp", userSignUpValidation , userCtl.signUp);
+    router.post("/signUp", userSignUpValidation, userCtl.signUp);
     router.post("/login", userLoginValidation, userCtl.login);
     
     return router;

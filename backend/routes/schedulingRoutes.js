@@ -10,12 +10,12 @@ module.exports = function () {
     var schedulingCtl = new schedulingController();
 
     router.post("/create",
-        // checkAuth,
+        checkAuth,
         upload.single("goodImg"),
         schedulingCtl.create);
 
     router.get("/get",
-        // checkAuth,
+        checkAuth,
         schedulingCtl.get);
 
     router.post("/getall", schedulingCtl.getAll);

@@ -4,11 +4,11 @@ var Schema = mongoose.Schema;
 
 var SchedulingSchema = new Schema({
 
-    pickUpPoint: { type: String, require: true },
-    deliveryPoint: { type: String, required: true },
+    pickUpPoint: { type: String, require: true , trim: true},
+    deliveryPoint: { type: String, required: true, trim: true },
     pickUpTime: { type: String, required: true },
     pickUpDate: { type: String, required: true },
-    natureOfGood: { type: String, required: true },
+    natureOfGood: { type: String, required: true, trim: true },
     quantity: { type: String, required: true },
     goodsType: { type: String, required: true },
     goodsDescription: { type: String, required: true },
@@ -27,6 +27,7 @@ var SchedulingSchema = new Schema({
     
     cloudImage: { type: String},
     imageId: { type: String },
+    databaseImage: {type : String},
     
 
     timeOfOrder: { type: Date, default: new Date() },
