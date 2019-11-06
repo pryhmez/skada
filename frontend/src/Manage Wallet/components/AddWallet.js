@@ -11,6 +11,7 @@ class AddWallet extends Component {
         return ( 
             <ProductConsumer>
                 {value => {return(
+                    <div>
             <div style={{border:value.paydrop && 'none'}} className='pay'>
                 <div style={{color:value.paydrop == false ? "#333333":"#2F80ED"}} className="pay-text">
                     <i className="fas fa-plus"></i>
@@ -55,6 +56,15 @@ class AddWallet extends Component {
                     </div>
                 </div>
                 </div>
+            <div style={{border:value.paydrop && 'none'}} style={{marginTop:'0px',borderTop:'none'}} className='pay'>
+             <div style={{color:value.paydrop == false ? "#333333":"#2F80ED"}} className="pay-text">
+             <i class="far fa-window-maximize"></i>
+             <aside>Fund Wallet</aside>
+             <i style={{marginLeft:'20px'}} onClick={value.handlePayDrop} 
+             class={value.paydrop == false ? "fas fa-caret-right":"fas fa-caret-down"}></i> 
+             </div>
+            </div>
+           </div>
             )}}
             </ProductConsumer>
          );
