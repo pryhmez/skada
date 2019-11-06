@@ -1,28 +1,33 @@
-import React, { Component,useContext, useState,useEffect } from 'react';
+import React, { useContext, useState,useEffect } from 'react';
 import {Link} from "react-router-dom"
-import Button from "./RegisterButton";
 import Logo from "../../components/Logo";
 import Drop from "./DropDown"
 import "../css/Register.css"
 import AuthContext from "../../Context/auth/authContext";
+import AlertContext from '../../Context/alert/alertContext'
 
 const Register  =  props => {
-    const authContext = useContext(AuthContext)
-    const {register, status, msg, error} = authContext;
-
-    console.log(status)
+    const authContext = useContext(AuthContext);
+    const alertContext = useContext(AlertContext);
+    const { setAlert } = alertContext;
+    const {register, status, message, loading, error} = authContext;
+    const {location:{state:{userInfo}}} = props
     useEffect(() => {
-        console.log("hiiiiiiiiiaaaaaa", status)
+
         if (status === true) {
-          props.history.push('/');
-        }
-    
-        if (error === 'User already exists') {
-        //   setAlert(error, 'danger');
-        //   clearErrors();
+            const { email } = userInfo;
+            props.history.push({
+                pathname: '/register_verified',
+                state: { businessname, email }
+              })
+        } 
+        if (status === "fail"){
+
+            setAlert(message, 'danger');
+            //clearErrors();
         }
         // eslint-disable-next-line
-      }, [error, status, msg, props.history]);
+      }, [error, status, message]);
 
       const [ user, setUser ] = useState({ 
         businessname:"",
@@ -49,22 +54,15 @@ const Register  =  props => {
 
      const onSubmit = e => {
         e.preventDefault();
-        const {location:{state:{userInfo}}} = props
         const isPhoneValid = (/^0[7-9][0-1]\d{8}$/g).test(businessphone);
-        // console.log(isPhoneValid)
         if(isPhoneValid) {
             const regUser = { businessname,
             businessphone,
             businesstype,
             businesscategory, ...userInfo}; 
-            // this.props.history.push({
-            //     pathname: '/register2',
-            //     state: { userInfo }
-            //   })
             register(regUser)
         } else {
-            alert("I, victor promise to fix or it turn to a Bed bug")
-           
+            setAlert("PLease Input a valid phone number", 'danger') 
         }
       };
 
@@ -84,17 +82,18 @@ const Register  =  props => {
                         <input className="na" onChange={onChange} value={businessphone} name='businessphone' required placeholder="Business Number"></input>
                         <input className="na" onChange={onChange}  value={businesstype} name='businesstype' required placeholder="Business Type"></input>
                         <Drop onChange = {onChange} value={businesscategory}/>
-                        <input
-                            type='submit'
-                            value='Done'
-                            className='bt btn-primary btn-block'
-                            />
+                        <div className='flex-end'>
+                            <button className="bt-login" type="submit">
+									{ loading ? <i 
+										className= "fa fa-spinner fa-spin"/> : "Done"}
+							</button>
+                        </div>
                     </form>
                     <div className="foot">
                         <div><span>Sign up with Instagram page 
                             <i style={{color:'#2F80ED',fontSize:"25px",marginLeft:'5px'}} className="fab fa-instagram"></i></span></div>
                             <br/>
-                        <div>Have an Account? <pan>Sign in</pan></div>
+                        <div>Have an Account? <Link to="/login"  className="textDeco-none">Sign In</Link></div>
                     </div>
                 </div>
             </div>
