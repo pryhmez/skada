@@ -4,7 +4,6 @@ const AppError = require('../utils/appError');
 
 module.exports = function schedulingController() {
     this.create = (req, res) => {
-        console.log(req.file)
 
         createSchedule(req.body, req.file).then(result => {
             res.send({

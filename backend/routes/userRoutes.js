@@ -1,13 +1,16 @@
 const router = require('express').Router();
-const userController = require("../controllers/userController");
-const {  userSignUpValidation, userLoginValidation }  =  require("../middleWares/userValidation");
+const authController = require("../controllers/authController");
+const auth = require("../middleWares/checkAuth")
+const { signUpValidation, loginValidation }  =  require("../middleWares/userValidation");
 
 module.exports = function() {
    
-    var userCtl = new userController();
+    var authCtl = new authController();
     
-    router.post("/signUp", userSignUpValidation, userCtl.signUp);
-    router.post("/login", userLoginValidation, userCtl.login);
-    
+    router.post("/signup", signUpValidation , authCtl.signUp);
+    router.get('/confirmation/:token', authCtl.confirmSignUp);
+    router.post('/resend', authCtl.resendConfirmToken);
+    router.post("/login", loginValidation, authCtl.login);
+    router.get("/login", auth, authCtl.getLoggedInUser)
     return router;
 }
