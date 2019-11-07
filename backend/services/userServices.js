@@ -9,10 +9,6 @@ const loginUser = function(userData) {
   return userModel.find({ email: userData.email });
 };
 
-
-const findUserWithId = function(_id) {
-  return userModel.findOne({ _id });
-};
 const findUserWithEmail = function(email) {
   return userModel.findOne({ email });
 };
