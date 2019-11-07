@@ -1,4 +1,5 @@
 const userModel = require("../models/users");
+const bcrypt = require("bcrypt");
 
 const signUpUser = async function(userData, hash) {
   let user = await userModel.findOne({ email: userData.email });
@@ -21,7 +22,7 @@ const signUpUser = async function(userData, hash) {
 const loginUser = function(userData) {
   return userModel.find({ email: userData.email });
 };
-const userModel = require("../models/users");
+
 
 const findUserWithId = function(_id) {
   return userModel.findOne({ _id });
@@ -34,27 +35,24 @@ const saveChangesToUser = function(user) {
 };
 
 const editUser = async function(userData, userParams) {
-  const user = await userModel.findByIdAndUpdate(
-    { _id: userParams },
-    {
-      $set: {
-        firstName: userData.firstName,
-        lastName: userData.lastname,
-        email: userData.email,
-        phone: userData.phone,
-        password: hash,
-        businessName: userData.businessname,
-        businessPhone: userData.businessphone,
-        businessType: userData.businesstype,
-        businessCategory: userData.businesscategory,
-        "cardDetails.CardNumber": userData.cardDetails.CardNumber,
-        "cardDetails.cardHolderName": userData.cardDetails.cardHolderName,
-        "cardDetails.expiryDate": userData.cardDetails.expiryDate
-      }
-    },
-    { new: true }
-  );
-  return user;
+  if (userData.password) {
+    var hash = await bcrypt.hash(userData.password, 10);
+  }
+  const user = await userModel.findOne({ _id: userParams });
+  user.firstName = userData.firstName;
+  user.lastname = userData.lastName;
+  user.email = userData.email;
+  user.phone = userData.phone;
+  user.password = hash;
+  user.businessname = userData.businessName;
+  user.businessphone = userData.businessPhone;
+  user.businesstype = userData.businessType;
+  user.businesscategory = userData.businessCategory;
+  user.cardDetails.CardNumber = userData.CardNumber;
+  user.cardDetails.cardHolderName = userData.cardHolderName;
+  user.cardDetails.expiryDate = userData.expiryDate;
+
+  return user.save();
 };
 
 module.exports = {
