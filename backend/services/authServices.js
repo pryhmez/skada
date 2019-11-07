@@ -22,7 +22,6 @@ const signUpUser = async function(userData, hash) {
 }
 
 const loginUser =  function (userData) {
-    console.log(userData)
     const user =  userModel.findOne({email: userData.email});
     return user
 }

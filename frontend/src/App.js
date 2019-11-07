@@ -10,30 +10,33 @@ import Complete from "./SheduleComplete/components/Complete";
 import Tracking from "./Track/components/Track";
 import DeliveryStatus from "./DeliveryStatus/DeliveryStatus";
 import AuthState from "../src/Context/auth/authState";
+import AlertState from "../src/Context/alert/alertState";
 import Login from "../src/LoginFolder/components/Login";
-import RegisterVerified from "../src/RegisterVerified/components/RegisterVerified";
-import Manage from "../src/Manage Wallet/components/Manage"
-
-
+import RegisterVerified from "../src/RegisterVerified/components/RegisterVerified"
+import PrivateRoute from "./routing/PrivateRoute"
+import Alerts  from "./components/Alert";
 
 function App() {
   return (
     <AuthState>
-    <>
-      <Switch>
-      <Route path="/" exact component={Landing}></Route>
-      <Route path="/register1" component={Register1}></Route>
-      <Route path="/register2" component={Register}></Route>
-      <Route path="/dashboard" component={Dashboard}></Route>
-      <Route path="/schedule" component={Shedule}></Route>
-      <Route path="/complete" component={Complete}></Route>
-      <Route path="/tracking" component={Tracking}></Route>
-      <Route path="/delivery status" component={DeliveryStatus}></Route>
-      <Route path="/login" component={Login}></Route>
-      <Route path="/registerverified" component={RegisterVerified}></Route>
-      <Route path="/managewallet" component={Manage}></Route>
-      </Switch>
-    </>
+      <AlertState>
+        <>
+          <Alerts />
+          <Switch>
+          <PrivateRoute exact path="/dashboard" component={Dashboard}></PrivateRoute>
+          <PrivateRoute exact path="/schedule" component={Shedule}></PrivateRoute>
+          <PrivateRoute exact path="/tracking" component={Tracking}></PrivateRoute>
+          <PrivateRoute exact path="/delivery status" component={DeliveryStatus}></PrivateRoute>
+          <PrivateRoute path="/managewallet" component={Manage}></PrivateRoute>
+          <Route exact path="/register1" component={Register1}></Route>
+          <Route exact path="/register2" component={Register}></Route>
+          <Route exact path='/' component={Landing} />
+          <Route exact path="/login" component={Login}></Route>
+          <Route exact path="/complete" component={Complete}></Route>
+          <Route exact path="/register_verified"  component={RegisterVerified}></Route>
+          </Switch>
+        </>
+      </AlertState>
     </AuthState>
   );
 }

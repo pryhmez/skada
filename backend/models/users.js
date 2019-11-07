@@ -8,8 +8,9 @@ var UserSchema = new Schema({
 	email: {
 		type: String,
 		required: true,
-		unique: true,
-		lowercase: true
+		lowercase: true,
+		// index: {unique: true, dropDups: true},
+		unique: true
 	},
 	password: { type: String, required: true },
 	businessName: { type: String, required: true },
