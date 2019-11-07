@@ -1,32 +1,22 @@
-html
-body
-div(style='height:300px; width:100%;background-color:#e2e2e2; text-align:center; padding-top:50px')
-p(style='font-size:30px;') jsonworld.com
-p Payment with stripe in Nodejs express application.
- 
-form(action="/charge", method="post")
-article
-label Amount: html
-body
-div(style='height:300px; width:100%;background-color:#e2e2e2; text-align:center; padding-top:50px')
-p(style='font-size:30px;') jsonworld.com
-p Payment with stripe in Nodejs express application.
- 
-form(action="/pay", method="post")
-article
-label Amount: $10.00
-script(
-src="//checkout.stripe.com/v2/checkout.js",
-class="stripe-button",
-data-key='*********************************',
-data-locale="auto",
-data-description="Sample payment",
-data-amount="1000")
-0.00
-script(
-src="//checkout.stripe.com/v2/checkout.js",
-class="stripe-button",
-data-key='*********************************',
-data-locale="auto",
-data-description="Sample payment",
-data-amount="1000")
+
+html(style=('overflow:hidden;'))
+  body(style=('overflow:none;margin:0px;height:100%'))
+    form(action="./credit", method="post")
+      article
+        body(style='margin:0px;height:100%')
+          div(style='display:flex;justify-content:space-between;height:100%')
+            img(src='/uploads/sideimg.png' style='width:50%; height:100%;')
+            div(style='height:3000px; width:100%;background-color:#ffffff; text-align:center; padding-top:50px')
+              img(src='/uploads/payimg.png'  style='width:100px; height:100px;')
+              p(style='font-size:30px; text-align:center;') Skada Delivery Services
+              b
+              script(
+              src="//checkout.stripe.com/v2/checkout.js",
+              class="stripe-button",
+              data-key='pk_test_MUosbQlpXANdIDihYu8GBdHW00TI5trWiM',
+              data-locale="auto",
+              data-description="Delivery Charge",
+              data-amount="500")
+              article
+              p
+              label Total Amount: $5.00           
