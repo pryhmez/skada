@@ -1,23 +1,9 @@
 const userModel = require("../models/users");
 const bcrypt = require("bcrypt");
 
-const signUpUser = async function(userData, hash) {
-  let user = await userModel.findOne({ email: userData.email });
-  if (user) return null;
-  const newUser = await new userModel({
-    firstName: userData.firstname,
-    lastName: userData.lastname,
-    email: userData.email,
-    phone: userData.phone,
-    password: hash,
-    businessName: userData.businessname,
-    businessPhone: userData.businessphone,
-    businessType: userData.businesstype,
-    businessCategory: userData.businesscategory
-  });
-  console.log("igothere  still");
-  return newUser.save();
-};
+const findUserWithId = function( _id ) {
+    return userModel.findOne({ _id }).select('-password')
+}
 
 const loginUser = function(userData) {
   return userModel.find({ email: userData.email });
@@ -56,10 +42,7 @@ const editUser = async function(userData, userParams) {
 };
 
 module.exports = {
-  signUpUser: signUpUser,
-  loginUser: loginUser,
-  editUser: editUser,
-  findUserWithId: findUserWithId,
-  saveChangesToUser: saveChangesToUser,
-  findUserWithEmail: findUserWithEmail
-};
+    findUserWithId,
+    saveChangesToUser,
+    findUserWithEmail
+}
