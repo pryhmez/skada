@@ -34,7 +34,7 @@ const saveChangesToUser = function(user) {
 };
 
 const editUser = async function(userData, userParams) {
-  const userData = await userModel.findByIdAndUpdate(
+  const user = await userModel.findByIdAndUpdate(
     { _id: userParams },
     {
       $set: {
@@ -54,7 +54,7 @@ const editUser = async function(userData, userParams) {
     },
     { new: true }
   );
-  return userData;
+  return user;
 };
 
 module.exports = {

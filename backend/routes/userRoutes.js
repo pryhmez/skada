@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const authController = require("../controllers/authController");
+const userCtl  = require('../controllers/userController')
 const { signUpValidation, loginValidation }  =  require("../middleWares/userValidation");
 
 module.exports = function() {
@@ -10,6 +11,7 @@ module.exports = function() {
     router.get('/confirmation/:token', authCtl.confirmSignUp);
     router.post('/resend', authCtl.resendConfirmToken);
     router.post("/login", loginValidation, authCtl.login);
+    router.post("/edit", loginValidation, userCtl.editUser);
     
     return router;
 }
