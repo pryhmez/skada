@@ -39,5 +39,9 @@ const editUser = async function(userData, userParams) {
 
 module.exports = {
     findUserWithId,
+    loginUser,
+    findUserWithEmail,
+    saveChangesToUser,
+    editUser
     
 }
