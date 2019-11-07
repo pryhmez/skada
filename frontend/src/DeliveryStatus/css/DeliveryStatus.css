@@ -1,6 +1,10 @@
 .del-cont{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 100%;
 }
 
@@ -12,13 +16,19 @@
 
 
 .delivery-nav-cont {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background: white;
     border-bottom: 0.2px solid #C4C4C4 ;
 }
 .delivery-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 500px;
     padding: 0px 20px;
@@ -28,8 +38,13 @@
     font-weight: 600;
     padding: 35px 40px;
     color: #C4C4C4;
+    cursor: pointer; 
 }
 .del-active {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 35px 40px;
+    color: #C4C4C4;
     border-bottom: 2px solid #2F80ED;
     color: #4F4F4F;
 }

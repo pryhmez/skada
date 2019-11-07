@@ -1,3 +1,89 @@
 * {
     font-family: 'Pavanam', sans-serif;
 }
+:root {
+    --primary-color: #2F80ED;
+    --dark-color: #333333;
+    --light-color: #f4f4f4;
+    --danger-color: #dc3545;
+    --success-color: #28a745;
+    --white-color: #ffffff;
+  }
+  
+.textDeco-none {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+/* 
+  .alert-container{
+    display: flex;
+    opacity: 0.9;
+    color: #333;
+    justify-content: flex-end;
+    background: rgba(0,0,0,0);
+    width: 50%;
+  } */
+
+/* alert */
+.alert {
+   position: absolute;
+    left: 50%;
+    top: 2%;
+    padding: 5px 1rem;
+  }
+  
+  /* 
+  
+  .alert-light {
+    background: var(--light-color);
+    color: #333;
+  }
+  
+  .alert-dark {
+    background: var(--dark-color);
+    color: #fff;
+  } */
+  .alert-primary {
+    background: var(--primary-color);
+    color: #fff;
+  }
+  .alert-danger {
+    background: var(--danger-color);
+    color: #fff;
+    /* width: 50%; */
+  }
+  
+  /* .alert-success {
+    background: var(--success-color);
+    color: #fff;
+  }
+
+  .alert-white {
+    background: #fff;
+    color: #333;
+    border: #ccc solid 1px;
+  } */
+
+
+  /* flex */
+  .flex-end {
+      display: flex;
+      justify-content: flex-end;
+  }
+
+
+  /* buttons */
+  button {
+    cursor: pointer;
+  }
+  .bt-login{
+    margin-top: 15px;
+    color: var(--white-color);
+    background: var(--primary-color);
+    border: none;
+    padding: 8px 25px;
+    margin-right: 15px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100px;
+  }

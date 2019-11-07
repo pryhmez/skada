@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Notification from "./DropDown";  
-import {ProductConsumer} from "../../Context";
+import {ProductConsumer} from "../../Context/Context";
 import "../css/Side.css"
 
 class Nav extends Component {

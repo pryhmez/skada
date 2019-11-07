@@ -27,9 +27,9 @@ class Navigation extends Component {
                     <br/><br/><br/><br/><br/>
                     <div className="ham rr">Why skada?</div>
                     <Link to ="/register1"><div className="ham"><Button content={'Register'} color={"#2F80ED"} background={"whitesmoke"} border={'none'} /></div></Link>
-                    <div className="ham"><Button content={'Login'} color={"whitesmoke"} border={'3px solid #FFFFFF'} 
+                    <Link to ="/login"><div className="ham"><Button content={'Login'} color={"whitesmoke"} border={'3px solid #FFFFFF'} 
                     background={"linear-gradient(331.3deg, #2F80ED 25.33%, rgba(58, 149, 238, 0.722893) 95.2%, rgba(86, 204, 242, 0) 146.89%)"} 
-                    border={"1px solid white"}/></div>
+                    border={"1px solid white"}/></div></Link>
                 </div>
             </div>
             </>

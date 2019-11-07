@@ -17,6 +17,15 @@ const signUpUser = async function(userData, hash) {
   console.log("igothere  still");
   return newUser.save();
 };
+const findUserWithId = function( _id ) {
+    return userModel.findOne({ _id }).select('-password')
+}
+const findUserWithEmail = function( email ) {
+    return userModel.findOne({ email })
+}
+const saveChangesToUser = function(user){
+    return user.save();
+}
 
 const loginUser = function(userData) {
   return userModel.find({ email: userData.email });

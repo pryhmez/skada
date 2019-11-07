@@ -2,17 +2,18 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
-	firstName: { type: String, required: true },
-	lastName: { type: String, required: true },
-	phone: { type: String, required: true },
+	firstName: { type: String, required: true , trim: true},
+	lastName: { type: String, required: true, trim: true },
+	phone: { type: String, required: true, trim: true },
 	email: {
 		type: String,
 		required: true,
-		unique: true,
-		lowercase: true
+		lowercase: true,
+		index: {unique: true, dropDups: true},
+		unique: true
 	},
-	password: { type: String, required: true },
-	businessName: { type: String, required: true },
+	password: { type: String, required: true, trim: true },
+	businessName: { type: String, required: true, trim: true },
 	businessPhone: {
 		type: String,
 		required: true
