@@ -10,9 +10,9 @@ const loginUser = function(userData) {
 };
 
 
-const findUserWithId = function(_id) {
-  return userModel.findOne({ _id });
-};
+// const findUserWithId = function(_id) {
+//   return userModel.findOne({ _id });
+// };
 const findUserWithEmail = function(email) {
   return userModel.findOne({ email });
 };
