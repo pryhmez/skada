@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const authController = require("../controllers/authController");
-const userCtl  = require('../controllers/userController')
 const auth = require("../middleWares/checkAuth")
 const { signUpValidation, loginValidation }  =  require("../middleWares/userValidation");
 
@@ -12,9 +11,6 @@ module.exports = function() {
     router.get('/confirmation/:token', authCtl.confirmSignUp);
     router.post('/resend', authCtl.resendConfirmToken);
     router.post("/login", loginValidation, authCtl.login);
-
-    router.post("/edit", loginValidation, userCtl.editUser);
-    
-    router.get("/login", auth, authCtl.getLoggedInUser);
+    router.get("/login", auth, authCtl.getLoggedInUser)
     return router;
 }
