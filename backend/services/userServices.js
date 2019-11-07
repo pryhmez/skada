@@ -7,6 +7,5 @@ const findUserWithId = function( _id ) {
 
 module.exports = {
     findUserWithId,
-    saveChangesToUser,
-    findUserWithEmail
+    
 }
