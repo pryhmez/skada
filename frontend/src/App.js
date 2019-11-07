@@ -15,6 +15,7 @@ import Login from "../src/LoginFolder/components/Login";
 import RegisterVerified from "../src/RegisterVerified/components/RegisterVerified"
 import PrivateRoute from "./routing/PrivateRoute"
 import Alerts  from "./components/Alert";
+import Manage from "./Manage Wallet/components/Manage"
 
 function App() {
   return (
