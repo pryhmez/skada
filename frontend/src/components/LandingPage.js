@@ -5,6 +5,7 @@ import truck from "../img/truck.png" ;
 import hand from "../img/hands.png";
 import heads from "../img/heads.png";
 import litimg from "../img/pic.png";
+import time from "../img/time.png"
 import Email from "./Email"
 import "../css/LandingPage.css"
 import Button from './Button';
@@ -106,7 +107,7 @@ of your delivery</h3>
                 </div>
                 <div style={{background:'#F4F7FA'}}>
                 <div style={{padding:'70px 0px'}} className='lit'>
-                <div style={{width:'400px'}}><img data-aos="fade-right" src={litimg}></img></div>
+                <div style={{width:'400px'}}><img data-aos="fade-right" src={time}></img></div>
                 <aside data-aos="fade-left">
                         <h3 style={{width:'200px'}}>Flexible rates and convenient 
 transit times.</h3>
