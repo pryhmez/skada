@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 const { validationResult } = require('express-validator');
 const AppError = require('../utils/appError');
 const nodemailer = require('nodemailer');
-// const sendgridTransport = require('nodemailer-sendgrid-transport')
+// const Transport = require('nodemailer--transport')
 
 module.exports = function authController() {
 	this.signUp = (req, res, next) => {
@@ -148,8 +148,8 @@ module.exports = function authController() {
 		verifyUserAccountToken(_id, token)
 			.then((userToken) => {
 				const transporter = nodemailer.createTransport({
-					service: 'Sendgrid',
-					auth: { user: process.env.SENDGRID_USERNAME, pass: process.env.SENDGRID_PASSWORD }
+					service: '',
+					auth: { user: process.env._USERNAME, pass: process.env._PASSWORD }
 				});
 				const mailOptions = {
 					from: 'no-reply@skada.com',
