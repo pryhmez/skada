@@ -25,6 +25,9 @@ const RegisterVerified = (props) => {
 		if(status === "fail") {
 			setAlert(message,'danger')
 		}
+		if(status === "error") {
+			setAlert("Sorry Email failed to send, Please try again later ",'danger')
+		}
         // eslint-disable-next-line
 	  }, [ message, props.location.state, count, status, loading]);
 	if(!props.location.state) {
