@@ -19,7 +19,7 @@ export default (state, action) => {
         console.log(alert.id,  action.payload)
         return  alert.id === action.payload})
       al.splice(index,1)
-      console.log(index)
+      console.log(al)
       return {...state,  alerts:  al}
     default:
       return state;

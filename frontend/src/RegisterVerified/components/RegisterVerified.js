@@ -9,7 +9,7 @@ const RegisterVerified = (props) => {
 	const authContext = useContext(AuthContext);
 	const alertContext = useContext(AlertContext);
 	const { setAlert } = alertContext;
-	const {resendRegEmail, status, message, loading} = authContext;
+	const {resendRegEmail, clearMessages, status, message, loading} = authContext;
 	const [ count, setCount ] = useState(0);
 	const handleResend = () => {
 		const {location:{state:{ email}}} = props
@@ -19,15 +19,16 @@ const RegisterVerified = (props) => {
 
 	  
 	useEffect(() => {
-		if(status === true){
+		if((status === true) && message){
 			setAlert(message,'primary')
 		} 
-		if(status === "fail") {
+		if((status === "fail") && message) {
 			setAlert(message,'danger')
 		}
-		if(status === "error") {
+		if((status === "error") && message) {
 			setAlert("Sorry Email failed to send, Please try again later ",'danger')
 		}
+		clearMessages()
         // eslint-disable-next-line
 	  }, [ message, props.location.state, count, status, loading]);
 	if(!props.location.state) {

@@ -21,10 +21,13 @@ const Register  =  props => {
                 state: { businessName : businessname, email }
               })
         } 
-        if (status === "fail"){
-
+        if ((status === "fail") && message){
             setAlert(message, 'danger');
         }
+        if (status === "error"){
+            setAlert("Failed to send Email, please try again later", 'danger');
+        }
+
         // eslint-disable-next-line
       }, [error, status, message]);
 
@@ -60,7 +63,6 @@ const Register  =  props => {
             businesstype,
             businesscategory, ...userInfo}; 
             register(regUser)
-            clearMessages();
         } else {
             setAlert("PLease Input a valid phone number", 'danger') 
         }
