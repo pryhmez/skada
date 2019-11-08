@@ -27,7 +27,7 @@ const Register1 = (props) => {
         const isPhoneValid = (/^0[7-9][0-1]\d{8}$/g).test(phone);
         if(isPhoneValid) {
             console.log(state)
-            props.history.push()
+            //clearErrors();/clearErrors();
             props.history.push({
                 pathname: '/register2',
                 state: { userInfo : state }
