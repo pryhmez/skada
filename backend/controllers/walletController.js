@@ -1,8 +1,6 @@
 const { balanceOfWallet, creditWallet, debitWallet, infoOfWallet, updatecardOfWallet } = require("../services/walletServices");
 const {keySecret, keyPublishable} = require("../config/stripeConfig");
 const stripe = require("stripe")(keySecret);
-console.log(typeof(process.env.keySecret))
-
 
 module.exports = function walletController() {
     this.debit = async (req, res, next) => {
@@ -11,7 +9,7 @@ module.exports = function walletController() {
     
     this.credit =(req, res, next) => {
         
-       let amount = 10 * 100;
+       let amount = 10 * 10000;
     
         // create a customer
        stripe.customers.create({
