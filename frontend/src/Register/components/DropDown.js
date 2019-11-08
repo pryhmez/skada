@@ -18,7 +18,7 @@ class Drop extends Component {
 			{ id: 12, cat: 'Catering' }
 		],
 		isFalse: false,
-		typeBiz: ''
+		typeBiz: 'Business Category'
 	};
 	handleDrop = () => {
 		this.setState({ isFalse: !this.state.isFalse });

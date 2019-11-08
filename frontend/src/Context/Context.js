@@ -6,9 +6,13 @@ class ProductProvider extends Component {
     state = { 
         isFalse: false,
         hide: false,
-        display:false
+        display:false,
+        paydrop : false
     }
 
+    handlePayDrop = () => {
+        this.setState({paydrop:!this.state.paydrop})
+    }
     handleSide = () => {
         this.setState({isFalse:!this.state.isFalse})
     }
@@ -28,7 +32,9 @@ class ProductProvider extends Component {
                 hidden : this.state.hide,
                 hide:this.handleHide,
                 display:this.state.display,
-                dis:this.handleDisplay
+                dis:this.handleDisplay,
+                paydrop:this.state.paydrop,
+                handlePayDrop:this.handlePayDrop
             }}>
                 {this.props.children}
             </ProductContext.Provider>
