@@ -24,7 +24,6 @@ const Register  =  props => {
         if (status === "fail"){
 
             setAlert(message, 'danger');
-            clearMessages();
         }
         // eslint-disable-next-line
       }, [error, status, message]);
@@ -61,6 +60,7 @@ const Register  =  props => {
             businesstype,
             businesscategory, ...userInfo}; 
             register(regUser)
+            clearMessages();
         } else {
             setAlert("PLease Input a valid phone number", 'danger') 
         }
