@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
-import { REGISTER_SUCCESS, REGISTER_FAILED, LOGIN_FAILED, LOGOUT, LOGIN_VERIFY, LOGIN_SUCCESS, AUTH_ERROR, LOADING, USER_LOADED } from '../Types';
+import { REGISTER_SUCCESS, REGISTER_FAILED, LOGIN_FAILED, LOGOUT, LOGIN_VERIFY, LOGIN_SUCCESS, AUTH_ERROR, CLEAR_MESSAGES, LOADING, USER_LOADED } from '../Types';
 
 const AuthState = (props) => {
 	const initailState = {
@@ -11,7 +11,7 @@ const AuthState = (props) => {
 		status: null,
 		user: null,
 		error: null,
-		loading: null
+		loading: false
 	};
 	const config = {
 		headers: {
@@ -23,7 +23,7 @@ const AuthState = (props) => {
 		console.log(registerData, 'Registration info');
 
 		try {
-			dispatch({ type: LOADING })
+			await dispatch({ type: LOADING })
 			const response = await fetch('/api/user/signup', {
 				method: 'post',
 				headers: config.headers,
@@ -113,7 +113,7 @@ const AuthState = (props) => {
 					payload: res
 				});
 			} else {
-				
+				console.log("erro1")
 				dispatch({
 					type: LOGIN_FAILED,
 					payload: res
@@ -121,6 +121,7 @@ const AuthState = (props) => {
 			}
 			
 		} catch (err) {
+			console.log("erro2")			
 			dispatch({
 				type: LOGIN_FAILED,
 				payload: err
@@ -165,6 +166,10 @@ const AuthState = (props) => {
 			dispatch({ type: AUTH_ERROR, payload: err });
 		}
 	};
+	const  clearMessages = () =>  {
+		console.log("hi")
+		dispatch({  type: CLEAR_MESSAGES })
+	}
 
 	return (
 		<AuthContext.Provider
@@ -180,7 +185,8 @@ const AuthState = (props) => {
 				login,
 				logout,
 				loadUser,
-				resendRegEmail
+				resendRegEmail,
+				clearMessages
 			}}
 		>
 			{props.children}
