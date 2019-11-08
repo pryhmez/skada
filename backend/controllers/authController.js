@@ -36,7 +36,7 @@ module.exports = function authController() {
 		loginUser(req.body)
 			.then((user) => {
 				if(!user) {
-					return next(new AppError('Incorrect Username or password', 401));
+					return next(new AppError('Email does not exist in our Database, please sign up', 401));
 				}
 				bcrypt.compare(req.body.password, user.password, (err, result) => {
 					const errors = validationResult(req);
