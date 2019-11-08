@@ -2,7 +2,8 @@ var router = require('express').Router();
 var checkAuth = require('../middleWares/checkAuth')
 var schedulingController = require("../controllers/schedulingController");
 const multer = require("multer");
-const upload = multer({ dest: "uploads/" });
+// const upload = multer({ dest: "uploads/" });
+const upload = require("../config/multerCofig")
 
 module.exports = function () {
 
@@ -14,7 +15,7 @@ module.exports = function () {
         schedulingCtl.create);
 
     router.get("/get",
-        // checkAuth,
+        checkAuth,
         schedulingCtl.get);
 
     router.post("/getall", schedulingCtl.getAll);
