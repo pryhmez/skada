@@ -3,9 +3,10 @@ var userRoutes = require("./userRoutes");
 var schedulingRoutes = require("./schedulingRoutes");
 var walletRoutes = require('./walletRoutes');
 
-module.exports = function (router) {
+module.exports = function (router, app) {
     router.use("/user", userRoutes());
     router.use("/schedule", schedulingRoutes());
     router.use("/wallet", walletRoutes());
+
     return router;
 }
