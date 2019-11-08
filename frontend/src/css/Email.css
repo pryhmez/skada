@@ -1,7 +1,14 @@
 .landinput {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-family: 'Lato', sans-serif;
+    margin-top: -1px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 .landinput input {
     width: 400px;
@@ -10,15 +17,50 @@
     border: none;
     padding-left: 20px;
 }
+.landinput input::-webkit-input-placeholder{
+    color:#9F9D9D ;
+    padding-left: 0px;
+    font-family: 'Lato', sans-serif;
+}
+.landinput input:-ms-input-placeholder{
+    color:#9F9D9D ;
+    padding-left: 0px;
+    font-family: 'Lato', sans-serif;
+}
+.landinput input::-ms-input-placeholder{
+    color:#9F9D9D ;
+    padding-left: 0px;
+    font-family: 'Lato', sans-serif;
+}
 .landinput input::placeholder{
-    color:#2F80ED ;
+    color:#9F9D9D;
     padding-left: 0px;
     font-family: 'Lato', sans-serif;
 }
 .landinput button {
-    width: 150px;
-    background: rgb(33, 96, 179);
-    padding: 19px 10px;
+    width: 100px;
+    background: rgba(255, 155, 33, 0.8);
+    opacity: .8;
+    border-radius: 2px;
+    height: 50px;
     border: none;
-    color: whitesmoke;
+    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: 20px;
+}
+@media(max-width:1024px){
+    .landinput button {
+        margin: 20px auto;
+    } 
+    .landinput input {
+        width: 90%;
+    }
 }

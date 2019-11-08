@@ -4,7 +4,7 @@ import { ProductConsumer } from '../../Context/Context';
 import Logo from '../../components/Logo';
 import Button from './DashButton';
 import '../css/Navi.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import One from '../icons/1.svg';
 import Two from '../icons/2.png';
 import Three from '../icons/3.png';
@@ -65,11 +65,13 @@ const Navi = (props) => {
                 return (
                     <div className="side-nav">
                         <div style={{ marginLeft: '80px' }}>
-                            <Logo />
+                            <Link style={{textDecoration:'none',color:'white'}} to="/"><Logo /></Link>
+                            <br/>
                         </div>
                         <header style={{ marginLeft: '80px' }} className="header">
-                            Hey <span>{businessName}</span>
+                            Hey <span style={{fontWeight:'600'}}>{businessName}</span>
                         </header>
+                        <br/>
                         {state.route.map((data) => (
                             <div style={{ marginTop: '40px' }}>
                                 <aside style={{ paddingLeft: '80px' }}>

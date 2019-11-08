@@ -2,10 +2,17 @@
     width: 100%;
     height: 120px;
     background: transparent;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 .navi .span div {
     margin-right: 40px;
@@ -13,9 +20,16 @@
     font-family: 'Lato', sans-serif;
 }
 .span {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    z-index: 2;
 }
 .ham {
     cursor: pointer;
@@ -24,6 +38,7 @@
     display: none;
     font-size: 26px;
     color: white;
+    -webkit-transition: 1s ease-in-out;
     transition: 1s ease-in-out;
 }
 .rr {
@@ -35,13 +50,15 @@
     .navi .span{
         width: 100%;
         display: block;
-        position: absolute;
+        position: fixed;
         top: 100px;
-        background:rgba(0, 0, 0, 0.829);
-        height: calc(100vh - 100px);
+        background:linear-gradient(239.34deg, rgba(47, 128, 237, 0.56) 
+        -46.42%, rgba(58, 149, 238, 0.98) -16.75%, rgba(16, 104, 222, 0.68) -2.93%, #1068DE 95.93%);;
+        height:100vh;
         /* line-height: 70px; */
-        right:100%;
-        transition: 0.5s ease-in-out
+        top: -130%;
+        -webkit-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
     }
     .span div {
         text-align: center;
@@ -53,14 +70,24 @@
     }
     .av i {
         display: block;
+        -webkit-transition: 1s ease-in-out;
         transition: 1s ease-in-out
     }
     .av {
         width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-around;
-        align-items: center;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         position: absolute;
+        -webkit-transition: 1s ease-in-out;
         transition: 1s ease-in-out
+    }
+    .navi .span div {
+        margin-right: 0px;
     }
 }
