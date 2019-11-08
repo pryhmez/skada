@@ -1,16 +1,21 @@
 .vr img{
-    -webkit-animation: bounce 2s forwards;
-            animation: bounce 2s forwards;
+    -webkit-transition: 1s all;
+    -webkit-transition: 2s all;
+    transition: 2s all;
+                    -webkit-animation: bounce 1s ease-in-out infinite;
+                            animation: bounce 1s ease-in-out infinite;
 }
+
+
 
 @-webkit-keyframes bounce {
     0% {
-        -webkit-transform: scale(0.9);
-                transform: scale(0.9);
+        -webkit-transform: scale(1);
+                transform: scale(1);
     }
     50% {
-        -webkit-transform: scale(1.1);
-                transform: scale(1.1);
+        -webkit-transform: scale(0.95);
+                transform: scale(0.95);
     }
     100% {
         -webkit-transform: scale(1.0);
@@ -18,14 +23,16 @@
     }
 }
 
+
+
 @keyframes bounce {
     0% {
-        -webkit-transform: scale(0.9);
-                transform: scale(0.9);
+        -webkit-transform: scale(1);
+                transform: scale(1);
     }
     50% {
-        -webkit-transform: scale(1.1);
-                transform: scale(1.1);
+        -webkit-transform: scale(0.95);
+                transform: scale(0.95);
     }
     100% {
         -webkit-transform: scale(1.0);

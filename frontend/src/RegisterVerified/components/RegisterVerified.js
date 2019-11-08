@@ -1,6 +1,7 @@
+import Logo from "../../components/Logo";
+import Img from "../img/Vector.svg";
+import "../css/RegisterVerified.css"
 import React, { useContext, useState, useEffect } from 'react';
-import Logo from '../../components/Logo';
-import Img from '../img/Vector.svg';
 import AuthContext from "../../Context/auth/authContext";
 import AlertContext from '../../Context/alert/alertContext'
 

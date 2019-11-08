@@ -8,7 +8,7 @@ const Login = (props) => {
 	const authContext = useContext(AuthContext);
 	const alertContext = useContext(AlertContext);
 	const { setAlert } = alertContext;
-	const { login, status, resendRegEmail, message, loading, user: returnedUser, isAuth } = authContext;
+	const { login, status, resendRegEmail, message, clearMessages, loading, user: returnedUser, isAuth } = authContext;
 
 	if (localStorage.token) {
 		authContext.loadUser();
@@ -27,7 +27,8 @@ const Login = (props) => {
 					state: { user: returnedUser.user }
 				});
 			}
-			if (status === 'fail') {
+			if ((status === 'fail') && message) {
+				console.log(message)
 				setAlert(message, 'danger');
 			}
 			if (status === 'pending') {
@@ -40,8 +41,9 @@ const Login = (props) => {
 				});
 			}
 			// eslint-disable-next-line
-		},
-		[ user, message, loading, returnedUser, status, props.history ]
+		}
+		,
+		[  message, loading, returnedUser, props.history ]
 	);
 
 
@@ -56,6 +58,7 @@ const Login = (props) => {
 				email,
 				password
 			});
+			clearMessages()
 		}
 	};
 	console.log("loading:", loading)

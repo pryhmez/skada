@@ -13,8 +13,8 @@ class DashSide extends Component {
                 {value => {return (
                 <div className='siddle'>
                         <Nav tit={'Dashboard'}/>
-                        <Stat/>
                         <Deliver/>
+                        <Stat/>
                 </div>
             )}}
             </ProductConsumer>

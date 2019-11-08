@@ -10,7 +10,9 @@ class Button extends Component {
                 color:this.props.color,
                 border:this.props.border,
                 borderRadius:'2px',
-                padding:'10px 35px'
+                padding:'10px 35px',
+                fontWeight:this.props.wh,
+                fontFamily: "'Pavanam', sans-serif"
             }}>{this.props.content}</button>
          );
     }

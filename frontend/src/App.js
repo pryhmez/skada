@@ -15,6 +15,7 @@ import Login from "../src/LoginFolder/components/Login";
 import RegisterVerified from "../src/RegisterVerified/components/RegisterVerified"
 import PrivateRoute from "./routing/PrivateRoute"
 import Alerts  from "./components/Alert";
+import Manage from "./Manage Wallet/components/Manage"
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <PrivateRoute exact path="/schedule" component={Shedule}></PrivateRoute>
           <PrivateRoute exact path="/tracking" component={Tracking}></PrivateRoute>
           <PrivateRoute exact path="/delivery status" component={DeliveryStatus}></PrivateRoute>
+          <PrivateRoute path="/managewallet" component={Manage}></PrivateRoute>
           <Route exact path="/register1" component={Register1}></Route>
           <Route exact path="/register2" component={Register}></Route>
           <Route exact path='/' component={Landing} />

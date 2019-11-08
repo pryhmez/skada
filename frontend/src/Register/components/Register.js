@@ -10,7 +10,7 @@ const Register  =  props => {
     const authContext = useContext(AuthContext);
     const alertContext = useContext(AlertContext);
     const { setAlert } = alertContext;
-    const {register, status, message, loading, error} = authContext;
+    const {register, status, clearMessages, message, loading, error} = authContext;
     const {location:{state:{userInfo}}} = props
     useEffect(() => {
 
@@ -18,13 +18,13 @@ const Register  =  props => {
             const { email } = userInfo;
             props.history.push({
                 pathname: '/register_verified',
-                state: { businessname, email }
+                state: { businessName : businessname, email }
               })
         } 
         if (status === "fail"){
 
             setAlert(message, 'danger');
-            //clearErrors();
+            clearMessages();
         }
         // eslint-disable-next-line
       }, [error, status, message]);
