@@ -107,7 +107,7 @@ module.exports = function authController() {
 			findUserWithId(userToken._userId)
 				.then((user) => {
 					if (!user) return next(new AppError('We were unable to find a user for this token.', 400));
-					if (user.isVerified) return res.redirect('http://localhost:3000/login');
+					if (user.isVerified) return res.redirect('http://skada');
 
 					// Verify and save the user
 					user.isVerified = true;
