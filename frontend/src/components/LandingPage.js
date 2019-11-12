@@ -5,7 +5,8 @@ import truck from "../img/truck.png" ;
 import hand from "../img/hands.png";
 import heads from "../img/heads.png";
 import litimg from "../img/pic.png";
-import time from "../img/time.png"
+import time from "../img/time.png";
+import Fast from "../img/Fast.png"
 import Email from "./Email"
 import "../css/LandingPage.css"
 import Button from './Button';
@@ -21,8 +22,8 @@ class Landing extends Component {
                     <div className='landtext'>
                         <div>
                             <h1>Helping small business<br/> deliver their goods the smart way</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur<br/> adipisicing elit. 
-                                Vel, amet quod adipisci ipsam provident at tenetur alias!
+                            <p>The fastest and most reliable <br/>way to deliver your goods to your 
+customers and also keep track of their current location.
                             </p>
                             <button style={{
                                 padding:'15px 50px',
@@ -48,8 +49,8 @@ class Landing extends Component {
                                     <aside style={{textAlign:'center'}}>
                                     <img src={truck}></img>
                                     <h5>On-time delivery</h5>
-                                    <p style={{fontSize:'14px'}}>We guarantee same day and next-day delivery 
-                                        Enugu and across the country within 72hours. 
+                                    <p style={{fontSize:'12px'}}>We guarantee same day and next-day delivery Enugu and across the country within 72hours. Our state-of-the-art technology infrastructure also allows for multiple
+rescheduling opportunities to suit thecustomer’s needs. 
                                     </p>
                                     </aside>
                                 </div>
@@ -57,8 +58,8 @@ class Landing extends Component {
                                 <aside style={{textAlign:'center'}}>
                                     <img src={hand}></img>
                                     <h5>Secure and organized</h5>
-                                    <p style={{fontSize:'14px'}}>We guarantee same day and next-day delivery 
-                                        Enugu and across the country within 72hours. 
+                                    <p style={{fontSize:'12px'}}>
+                                    We handle customer parcels with utmost strictness & confidentiality. We ensure the parcels reach the intended recipients as fast as possible without any damages.
                                     </p>
                                     </aside>
                                 </div>
@@ -66,8 +67,8 @@ class Landing extends Component {
                                 <aside style={{textAlign:'center'}}>
                                     <img src={heads}></img>
                                     <h5>Exellent customer experience</h5>
-                                    <p style={{fontSize:'14px'}}>We guarantee same day and next-day delivery 
-                                        Enugu and across the country within 72hours. 
+                                    <p style={{fontSize:'12px'}}>
+                                    At GIGL, we believe that quality people produce consistently excellent service, and continuously innovate to meet customer needs. Our HR initiatives are deliberately designed to attract and maintain the best talents,
                                     </p>
                                     </aside>
                                 </div>
@@ -75,14 +76,10 @@ class Landing extends Component {
                         </div>
                 </section>
                 <div className='lit'>
-                    <div style={{width:'400px'}}><img data-aos="zoom-in-up" src={litimg}></img></div>
+                    <div style={{width:'400px'}}><img data-aos="zoom-in-up" src={Fast}></img></div>
                     <aside data-aos="zoom-in-down">
                         <h3 style={{width:'200px'}}>Fast order placement with electronic confirmation</h3>
-                        <p>Get in Full control of how your goods are delivered to your
-                            customers. Get in Full control of how your goods are delivered
-                            to your customers, Get in Full control of how your goods
-                            are delivered to your customers.Get in Full control of how
-                            your goods are delivered to your customers.
+                        <p>This service is more than just a delivery service. With an established reputation for speed and reliability, Skada offers priority delivery services to meet your needs every single hour of every single day. If getting that package to its destination is important to you, then it's definitely important to us.
                         </p>
                         <Button background={"#2F80ED"} color={'white'} content={"Get Started"} border={'none'} wh={'600'}/>
                     </aside>
@@ -94,11 +91,7 @@ class Landing extends Component {
                     <aside data-aos="fade-up-right">
                         <h3 style={{width:'200px'}}>Real time tracking 
 of your delivery</h3>
-                        <p>Get in Full control of how your goods are delivered to your
-                            customers. Get in Full control of how your goods are delivered
-                            to your customers, Get in Full control of how your goods
-                            are delivered to your customers.Get in Full control of how
-                            your goods are delivered to your customers.
+                        <p>Track all your shipments on Skada, you will get real-time tracking information and visualized delivery path with the Google Maps of all your packages. By just simply enter your tracking number you are in full control of your goods location.
                         </p>
                         <Button background={"#2F80ED"} color={'white'} content={"Get Started"} border={'none'} wh={'600'}/>
                     </aside>
@@ -111,11 +104,7 @@ of your delivery</h3>
                 <aside data-aos="fade-left">
                         <h3 style={{width:'200px'}}>Flexible rates and convenient 
 transit times.</h3>
-                        <p>Get in Full control of how your goods are delivered to your
-                            customers. Get in Full control of how your goods are delivered
-                            to your customers, Get in Full control of how your goods
-                            are delivered to your customers.Get in Full control of how
-                            your goods are delivered to your customers.
+                        <p>Enjoy the convenience of our flexible pick up service option - which means we collect your consignment at a time that suits you. We can also schedule regular daily pick-ups at fixed times or on select days. These services are offered at exceptional express delivery service at unbeatable prices.
                         </p>
                         <Button background={"#2F80ED"} color={'white'} content={"Get Started"} border={'none'} wh={'600'}/>
                     </aside>

@@ -40,6 +40,7 @@ const Login = (props) => {
 					state: { businessName, email }
 				});
 			}
+			clearMessages()
 			// eslint-disable-next-line
 		}
 		,
@@ -58,7 +59,7 @@ const Login = (props) => {
 				email,
 				password
 			});
-			clearMessages()
+			//clearMessages()
 		}
 	};
 	console.log("loading:", loading)
