@@ -1,16 +1,27 @@
 .succ-cont {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
     height: 92vh;
 }
 
 .succ {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 85%;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 .succ-pick {
     width: 250px;
@@ -28,6 +39,8 @@
     background-repeat: no-repeat;
     background-position: center;
     margin: 20px auto;
+    -webkit-animation: bounce 1s ease-in-out infinite;
+            animation: bounce 1s ease-in-out infinite;
 }
 .picko {
     position: absolute;
@@ -39,9 +52,15 @@
     height: 40px;
 }
 .suck-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width:368px;
     height: 280px;
     background: #2F80ED;
@@ -53,9 +72,15 @@
 .suck-text button {
     background: white;
     padding: 6px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     color: #2F80ED;
     border: none;
     margin: 10px auto;

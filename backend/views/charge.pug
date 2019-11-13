@@ -1,8 +1,15 @@
-html
-body
-div(style='height:300px; width:100%;background-color:#e2e2e2; text-align:center; padding-top:50px')
-h2 Payment done successfully! html
-body
-div(style='height:300px; width:100%;background-color:#e2e2e2; text-align:center; padding-top:50px')
-h2 Payment done successfully! $10.00
-0.00
+
+html(style=('overflow:hidden;'))
+  body(style=('overflow:none;margin:0px;height:100%'))
+    article
+        body(style='margin:0px;height:100%')
+        div(style='display:flex;justify-content:space-between;height:100%')
+            img(src='/uploads/sideimg.png' style='width:50%; height:100%;')
+            div(style='height:3000px; width:100%;background-color:#ffffff; text-align:center; padding-top:50px')
+                img(src='/uploads/payimg.png'  style='width:100px; height:100px;')
+                p(style='font-size:30px; text-align:center;') Skada Delivery Services
+                b
+                article
+                p
+                h2 You successfully paid <strong>$5.00</strong>!
+            //- label Total Amount: $5.00 

@@ -24,7 +24,7 @@ class Statboard extends Component {
                         <aside style={{fontSize:'21px'}}>123 456 5445 7XXX</aside>
                         </div>
                         <div style={{flex:'1'}}></div>
-                        <button style={{
+                        <button className="fund-wallet" style={{
                             width:'200px',
                             padding:'15px 0px',
                             color:'#2F80ED',
@@ -32,11 +32,12 @@ class Statboard extends Component {
                             borderRadius:'2px',
                             border:'none',
                             fontWeight:'500',
-                            fontSize:'18px',
+                            fontSize:'16px',
                             display:'flex',
                             justifyContent:'center',
                             alignItems:'center',
-                            marginTop:'10px'
+                            marginTop:'10px',
+                            fontWeight:'600'
                             }}><i className="fas fa-plus"></i><div style={{flex:"0.2"}}/> Fund Wallet
                         </button>
                     </aside>

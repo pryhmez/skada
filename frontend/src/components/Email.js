@@ -6,8 +6,8 @@ class Email extends Component {
     render() { 
         return ( 
             <form className='landinput'>
-                <input placeholder="Email address" type="email"></input>
-                <button>Get started</button>
+                <input placeholder="Order ID" type="email"></input>
+                <button>Track</button>
             </form>
          );
     }

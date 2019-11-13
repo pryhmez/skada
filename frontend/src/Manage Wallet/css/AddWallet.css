@@ -1,0 +1,42 @@
+.pay {
+    color:var(--text-color);
+    padding: 20px 0px;
+    border-top: 0.2px solid var(--border-color) ;
+    border-bottom: 0.2px solid var(--border-color);
+    margin-top: 20px;
+}
+.pay-text {
+    margin-left: 80px;
+    color: #333333;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.pay-text i {
+    padding-right: 20px;
+    font-family: 13px;
+}
+.pay-text aside {
+    font-size: 18px;
+    font-weight: 600;
+}
+.pay-card-container {
+    width: 80%;
+    margin-left: 80px;
+}
+.pay-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}

@@ -1,13 +1,30 @@
-const { balanceOfWallet, creditWallet, debitWallet, infoOfWallet, updatecardOfWallet } = require("../services/walletServices")
-
+const { balanceOfWallet, creditWallet, debitWallet, infoOfWallet, updatecardOfWallet } = require("../services/walletServices");
+const {keySecret, keyPublishable} = require("../config/stripeConfig");
+const stripe = require("stripe")(keySecret);
 
 module.exports = function walletController() {
-    this.debit = (req, res, next) => {
-
-        debitWallet(req.body).then()
+    this.debit = async (req, res, next) => {
+        await debitWallet(req.body).then()
     }
-
-    this.credit = (req, res, next) => {
+    
+    this.credit =(req, res, next) => {
+        
+       let amount = 10 * 10000;
+    
+        // create a customer
+       stripe.customers.create({
+            email: req.body.stripeEmail, // customer email
+            source: req.body.stripeToken // token for the card
+        }).then(customer =>
+                stripe.charges.create({ // charge the customer
+                    amount,
+                    description: "Sample Charge",
+                    currency: "usd",
+                    customer: customer.id
+                })).then ( charge => {
+                console.log(charge);
+            res.render("charge")
+        } )// render the payment successful alter page after payment
 
     }
 

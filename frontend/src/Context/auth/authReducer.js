@@ -1,4 +1,4 @@
-import {REGISTER_SUCCESS, REGISTER_FAILED, LOGIN_SUCCESS, LOGIN_VERIFY, LOADING, LOGIN_FAILED, AUTH_ERROR, LOGOUT, USER_LOADED} from "../Types"
+import {REGISTER_SUCCESS, REGISTER_FAILED, LOGIN_SUCCESS, LOGIN_VERIFY, LOADING, LOGIN_FAILED, AUTH_ERROR, LOGOUT, USER_LOADED, CLEAR_MESSAGES} from "../Types"
 
 export default (state, action) => {
     switch (action.type) {
@@ -21,13 +21,13 @@ export default (state, action) => {
         case LOGOUT:
             localStorage.removeItem('token');
             return {
-            ...state,
-            ...action.payload,
-            token: null,
-            isAuth: false,
-            loading: false,
-            user: null,
-            //error: action.payload
+                ...state,
+                ...action.payload,
+                token: null,
+                isAuth: false,
+                loading: false,
+                user: null,
+                //error: action.payload
             };
 
         case USER_LOADED:
@@ -36,6 +36,11 @@ export default (state, action) => {
                 isAuth: true,
                 loading: false,
                 user: action.payload
+            };
+        case  CLEAR_MESSAGES:
+            return {
+                ...state,
+                message: null
             };
         default:
             return state;

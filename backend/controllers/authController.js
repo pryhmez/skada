@@ -36,7 +36,7 @@ module.exports = function authController() {
 		loginUser(req.body)
 			.then((user) => {
 				if(!user) {
-					return next(new AppError('Incorrect Username or password', 401));
+					return next(new AppError('Email does not exist in our Database, please sign up', 401));
 				}
 				bcrypt.compare(req.body.password, user.password, (err, result) => {
 					const errors = validationResult(req);
@@ -145,11 +145,13 @@ module.exports = function authController() {
 			}
 		);
 		const { _id } = user;
+		console.log(process.env.SENDGRID_USERNAME);
+		console.log(process.env.SENDGRID_PASSWORD );
 		verifyUserAccountToken(_id, token)
 			.then((userToken) => {
 				const transporter = nodemailer.createTransport({
-					service: '',
-					auth: { user: process.env._USERNAME, pass: process.env._PASSWORD }
+					service: 'Sendgrid',
+					auth: { user: process.env.SENDGRID_USERNAME, pass: process.env.SENDGRID_PASSWORD }
 				});
 				const mailOptions = {
 					from: 'no-reply@skada.com',
