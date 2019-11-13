@@ -15,7 +15,7 @@ module.exports = function() {
   router.get("/confirmation/:token", authCtl.confirmSignUp);
   router.post("/resend", authCtl.resendConfirmToken);
   router.post("/login", loginValidation, authCtl.login);
-  router.post("/edit", loginValidation, userCtl.editUserProfile);
+  router.post("/edit", auth, userCtl.editUserProfile);
 
   router.get("/login", auth, authCtl.getLoggedInUser);
   return router;

@@ -8,7 +8,10 @@ const checkAuth = require("../middleWares/checkAuth");
 
 module.exports = function userController() {
   this.editUserProfile = (req, res, next) => {
-    const verify = verifyUserAccountToken(req.params.id, req.params.token);
+    const verify = verifyUserAccountToken(
+      req.user,
+      req.header("x-auth-token")
+    );
     if (!verify) {
       return next(new AppError("cant perform operation", 400));
     }
