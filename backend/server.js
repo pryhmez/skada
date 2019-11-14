@@ -31,6 +31,7 @@ app.use(express.urlencoded({ extended: false }))
 const server = http.createServer(app);
 app.set('views', path.join(__dirname, 'views'));
 // set view engine as pug
+//ff
 app.set('view engine', 'pug');
 
 // app.post("/charge", function (req, res) {
