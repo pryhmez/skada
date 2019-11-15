@@ -1,10 +1,12 @@
 const router = require("express").Router();
 const walletController = require("../controllers/walletController");
-var { keySecret, keyPublishable } = require("../config/stripeConfig")
+// var { keySecret, keyPublishable } = require("../config/stripeConfig")
+// var keyPublishable = process.env.keyPublishable;
 const stripe = require("stripe")(process.env.keySecret);
 
 
-module.exports = function () {
+module.exports = function walletRoutes() {
+    let amount = 0;
 
     var walletCtl = new walletController();
 
@@ -30,7 +32,16 @@ module.exports = function () {
 
     // to open the payment page on base url
     router.get("/pay", ((req, res) => {
-        res.render("index", { keyPublishable: process.env.keyPublishable});
+        console.log(req.query.amount);
+        amount=req.query.amount;
+        const keyPublishable = process.env.keyPublishable;
+        console.log(keyPublishable);
+        res.render("index", { 
+            keyPublishable: keyPublishable, 
+            amount: amount, 
+            creditLink: "./credit?amount=" + amount, 
+            dispAmount: amount*100
+         });
     }));
 
     return router;
