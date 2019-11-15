@@ -25,6 +25,8 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors(corsOptions));
 app.use('/uploads', express.static('uploads'));
+app.use( '/routes',express.static('routes'));
+app.use( '/views',express.static('views'));
 
 app.use(express.urlencoded({ extended: false }))
 

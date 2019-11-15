@@ -7,9 +7,12 @@ html(style=('overflow:hidden;'))
             img(src='/uploads/sideimg.png' style='width:50%; height:100%;')
             div(style='height:3000px; width:100%;background-color:#ffffff; text-align:center; padding-top:50px')
                 img(src='/uploads/payimg.png'  style='width:100px; height:100px;')
-                p(style='font-size:30px; text-align:center;') Skada Delivery Services
+                p(style='font-size:30px; text-align:center; font-family:pavanam, sans-serif; font-weight:bold') Skada Delivery Services
                 b
                 article
                 p
-                h2 You successfully paid <strong>$5.00</strong>!
+                h2(style="font-family:pavanam, sans-serif;") You successfully paid <strong id="name">$5.00</strong>!
+                script(type="module").
+                  let value = "NGN" + "#{amount}"
+                  document.getElementById("name").innerHTML= value
             //- label Total Amount: $5.00 

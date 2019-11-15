@@ -7,12 +7,14 @@ module.exports = function walletController() {
         await debitWallet(req.body).then()
     }
     
-    this.credit =(req, res, next) => {
+    this.credit =async (req, res, next) => {
+        console.log(req.query)
+        console.log("jdnbvelvbkbevlbvhkibvkibvlrekvrblbvekrgvklrb");
         
-       let amount = 10 * 10000;
+       let amount = parseFloat(req.query.amount);
     
         // create a customer
-       stripe.customers.create({
+       await stripe.customers.create({
             email: req.body.stripeEmail, // customer email
             source: req.body.stripeToken // token for the card
         }).then(customer =>
@@ -22,8 +24,9 @@ module.exports = function walletController() {
                     currency: "usd",
                     customer: customer.id
                 })).then ( charge => {
-                console.log(charge);
-            res.render("charge")
+                // console.log(charge);
+                console.log("this is charge")
+            res.render("charge", {amount: amount})
         } )// render the payment successful alter page after payment
 
     }
