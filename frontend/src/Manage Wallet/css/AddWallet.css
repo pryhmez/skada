@@ -36,7 +36,17 @@
         -ms-flex-align: center;
             align-items: center;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+        justify-content: space-between;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+        width: 100%;
+}
+.date {
+    width: 300px;
+}
+
+@media (max-height:1082px) {
+    .name {
+        width: 100%;
+    }
 }

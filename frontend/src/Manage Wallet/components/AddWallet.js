@@ -26,9 +26,10 @@ class AddWallet extends Component {
                             <div style={{fontSize:'16px'}}>Choose payment method</div>
                         </aside>
                         <div style={{flex:0.7}}></div>
+                        <div className='name' style={{display:'flex',flexWrap:'wrap',justifyContent:'space-evenly',width:'400px'}}>
                         <img src={One}></img>
                         <img src={Two}></img>
-                        <img src={Three}></img>
+                        <img src={Three}></img></div>
                     </div>
                     <div style={{marginTop:'30px'}} className="pay-card">
                         <aside>
@@ -52,7 +53,7 @@ class AddWallet extends Component {
                             <div style={{fontSize:'16px'}}>Enter expiry date</div>
                         </aside>
                         <div style={{flex:0.7}}></div>
-                        <input style={{width:'38%',height:'30px',border:'1px solid #CCCCCC'}} type="Password"></input>
+                        <input className='date' style={{width:'38%',height:'30px',border:'1px solid #CCCCCC'}} type="date"></input>
                     </div>
                 </div>
                 </div>
