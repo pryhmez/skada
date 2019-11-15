@@ -18,5 +18,6 @@ module.exports = function() {
   router.post("/edit", loginValidation, userCtl.editUserProfile);
 
   router.get("/login", auth, authCtl.getLoggedInUser);
+  router.get("/dashboard", userCtl.getDashboard);
   return router;
 };

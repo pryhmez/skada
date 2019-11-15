@@ -11,7 +11,7 @@ var SchedulingSchema = new Schema({
     natureOfGood: { type: String, required: true, trim: true },
     quantity: { type: String, required: true },
     goodsType: { type: String, required: true },
-    goodsDescription: { type: String, required: true },
+    goodsDescription: { type: String},
 
 
     recieversName: { type: String, required: true },
