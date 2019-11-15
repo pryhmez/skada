@@ -1,0 +1,20 @@
+.confirm-btn {
+	width: 200px;
+	padding: 10px 0px;
+	color: white;
+	background: #2f80ed;
+	border-radius: 2px;
+	border: none;
+	font-weight: 500;
+	font-size: 18px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+	font-weight: 60;
+}
+.btn-ash {
+    color: #9F9D9D;
+    background: #E1DFDD;
+    margin-right: 25px;
+}

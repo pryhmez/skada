@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
+import React, { useContext, useEffect } from 'react';
+import AuthContext from "../../Context/auth/authContext";
 
-class Send extends Component {
-    state = {  }
-    render() { 
+const Send = (props) => {
+  console.log(props.orderDet)
+  const authContext = useContext(AuthContext);
+    const {user :{user}} = authContext;
+    const { businessName:sendersName, email:sendersEmail, businessPhone: sendersPhone, _id: sendersId, } = user
+  const { recieversEmail, recieversName, recieversPhone } = props.orderDet;
+
         return ( 
             <div className="send-cont">
                 <div className="send">
@@ -12,13 +17,13 @@ class Send extends Component {
                                     <i style={{color:"#2F80ED",marginRight:'15px',marginTop:'4px'}}className="fas fa-user"></i>
                                     <div>
                                         <aside style={{fontSize:'18px',fontWeight:'bold'}}>Sender Information</aside>
-                                        <aside style={{fontWeight:'600'}}>Hunger Clinic</aside>
+                                        <aside style={{fontWeight:'600'}}>{sendersName}</aside>
                                         <aside>
                                             <aside style={{color:'#C4C4C4',fontSize:'0.7rem'}}>   
-                                                 Hungerclinic@gmail.com
+                                                 {sendersEmail}
                                             </aside>
                                             <aside style={{color:'#C4C4C4',fontSize:'0.8rem'}}>
-                                                 090 235 274 980
+                                                {sendersPhone}
                                             </aside>
                                         </aside>
                                     </div>
@@ -30,13 +35,13 @@ class Send extends Component {
                                     <i style={{color:"#2F80ED",marginRight:'15px',marginTop:'4px'}}className="fas fa-user"></i>
                                     <div>
                                         <aside style={{fontSize:'18px',fontWeight:'bold'}}>Receviers Information</aside>
-                                        <aside style={{fontWeight:'600'}}>John Doe</aside>
+                                        <aside style={{fontWeight:'600'}}>{recieversName}</aside>
                                         <aside>
                                             <aside style={{color:'#C4C4C4',fontSize:'0.7rem'}}>   
-                                                 johndoe@gmail.com
+                                                 {recieversEmail}
                                             </aside>
                                             <aside style={{color:'#C4C4C4',fontSize:'0.8rem'}}>
-                                                 080 290 562 999
+                                                 {recieversPhone}
                                             </aside>
                                         </aside>
                                     </div>
@@ -46,7 +51,6 @@ class Send extends Component {
                 </div>
             </div>
          );
-    }
 }
  
 export default Send;

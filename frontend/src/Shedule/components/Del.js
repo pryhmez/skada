@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import TopNav from "../../Dashboard/components/TopNav";
-import "../css/Shedule.css"
 
 class Side extends Component {
     state = {  }
     render() { 
+        const { deliveryPoint, pickUpPoint, pickUpDate, pickUpTime} = this.props.orderDet;
         return ( 
             <div>
                 <div className="del-cont">
@@ -18,16 +18,16 @@ class Side extends Component {
                                     <i style={{color:"#2F80ED",marginRight:'15px',marginTop:'4px'}}className="fas fa-map-marker-alt"></i>
                                     <div>
                                         <aside style={{fontSize:'18px',fontWeight:'bold'}}>Pick up point</aside>
-                                        <aside>27. Centenary Street, Golf City Estate, Enugu State,Nigeria</aside>
+                                        <aside>{pickUpPoint}</aside>
                                         <aside className="time">
                                             <aside className="time">
                                                 <i style={{paddingRight:'6px'}} class="fas fa-calendar-week"></i>    
-                                                 23-03-2020
+                                                 {pickUpDate}
                                             </aside>
                                             <div style={{flex:'1'}}></div>
                                             <aside className="time">
                                                 <i style={{paddingRight:'6px'}} className="fas fa-clock"></i>
-                                                 Estimated time: 12:00pm
+                                                 pick up time: {pickUpTime}
                                             </aside>
                                         </aside>
                                     </div>
@@ -39,16 +39,16 @@ class Side extends Component {
                                     <i style={{color:"#2F80ED",marginRight:'15px',marginTop:'4px'}}className="fas fa-map-marker-alt"></i>
                                     <div>
                                         <aside style={{fontSize:'18px',fontWeight:'bold'}}>Drop off points</aside>
-                                        <aside>27. Centenary Street, Golf City Estate, Enugu State,Nigeria</aside>
+                                        <aside>{deliveryPoint}</aside>
                                         <aside className="time">
                                             <aside className="time">
                                                 <i style={{paddingRight:'6px'}} class="fas fa-calendar-week"></i>    
-                                                 23-03-2020
+                                                {pickUpDate}
                                             </aside>
                                             <div style={{flex:'1'}}></div>
                                             <aside className="time">
                                                 <i style={{paddingRight:'6px'}} className="fas fa-clock"></i>
-                                                 Estimated time: 12:00pm
+                                                 Estimated time of Dlivery: 12:00pm
                                             </aside>
                                         </aside>
                                     </div>

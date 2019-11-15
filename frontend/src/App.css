@@ -26,7 +26,9 @@
     background: rgba(0,0,0,0);
     width: 50%;
   } */
-
+.text-prim {
+  color:  var(--primary-color);
+}
 /* alert */
 .alert {
    position: absolute;
@@ -94,3 +96,8 @@
     cursor: pointer;
     width: 100px;
   }
+
+/* utils */
+.ut-pad {
+  padding: 2rem
+}
