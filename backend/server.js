@@ -23,14 +23,17 @@ dotenv.config({ path: './config/config.env' });
 
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 app.use('/uploads', express.static('uploads'));
+app.use( '/routes',express.static('routes'));
+app.use( '/views',express.static('views'));
 
 app.use(express.urlencoded({ extended: false }))
 
 const server = http.createServer(app);
 app.set('views', path.join(__dirname, 'views'));
 // set view engine as pug
+//ff
 app.set('view engine', 'pug');
 
 // app.post("/charge", function (req, res) {

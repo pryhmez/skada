@@ -1,4 +1,4 @@
-const { signUpUser, loginUser, editUser } = require("../services/userServices");
+const { signUpUser, loginUser, editUser, dashboard } = require("../services/userServices");
 const { verifyUserAccountToken } = require("../services/authServices");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -29,4 +29,18 @@ module.exports = function userController() {
         });
       });
   };
+
+  this.getDashboard = (req, res, next) => {
+    dashboard(req.query).then(result => {
+      res.send({
+        success: true,
+        data: result
+      })
+    }).catch(err => {
+      res.send({
+        success: false,
+        data: err
+      })
+    })
+  }
 };
