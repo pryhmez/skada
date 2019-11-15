@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TopNav from "../Dashboard/components/TopNav";
+import TopNav from "./DeliveryNav";
 import InTransit from "./In-Transit";
 import Delivered from "./Delivered"
 import "./css/DeliveryStatus.css"
@@ -27,9 +27,9 @@ class DeliveryStatusSide extends Component {
             <div>
                 <TopNav tit={"Delivery Status"}/>
                     <div className="del-cont">
-            <div className="deli-cont">
-                <div className="delivery-nav-cont">
-                    <div className="delivery-nav">
+            <div style={{width:'100%'}}>
+                <div style={{width:'100%',borderBottom:'0.2px solid #C4C4C4',marginTop:'26px'}}>
+                    <div style={{width:'40%',display:'flex',justifyContent:'space-evenly'}}>
                         {tabs.map((tab,i) => {
                             let className = 'del-lik ';
                             className += activeTab === i ? 'del-active' : '';
@@ -39,7 +39,8 @@ class DeliveryStatusSide extends Component {
                         })}
                     </div>
                 </div>
-                {tabs[activeTab] && tabs[activeTab].component}
+                <br/><br/><br/>
+                <div style={{width:'95%',margin:'0px auto'}}>{tabs[activeTab] && tabs[activeTab].component}</div>
             </div>
                 </div>
             </div>

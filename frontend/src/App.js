@@ -16,7 +16,10 @@ import Login from "../src/LoginFolder/components/Login";
 import RegisterVerified from "../src/RegisterVerified/components/RegisterVerified"
 import PrivateRoute from "./routing/PrivateRoute"
 import Alerts  from "./components/Alert";
-import Manage from "./Manage Wallet/components/Manage"
+import Manage from "./Manage Wallet/components/Manage";
+import Modal from "./Modal/components/Modal";
+import Intransit from './Administration section/components/In-transit'
+import {ProductConsumer} from "./Context/Context"
 
 function App() {
   return (
@@ -38,9 +41,14 @@ function App() {
           <Route exact path="/complete" component={Complete}></Route>
           <Route exact path="/register_verified"  component={RegisterVerified}></Route>
           </Switch>
+          <ProductConsumer>
+          {value => {return (value.logout === true && <Modal/>)}}
+          </ProductConsumer>
+         
         </>
       </AlertState>
     </AuthState>
+    // <Intransit/>
   );
 }
 

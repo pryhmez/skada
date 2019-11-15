@@ -88,20 +88,20 @@ rescheduling opportunities to suit thecustomer’s needs.
                 </div>
                 <div style={{background:'white'}}>
                 <div style={{padding:'70px 0px'}} className='lit'>
-                    <aside data-aos="fade-up-right">
+                    <aside data-aos="fade-up">
                         <h3 style={{width:'200px'}}>Real time tracking 
 of your delivery</h3>
                         <p>Track all your shipments on Skada, you will get real-time tracking information and visualized delivery path with the Google Maps of all your packages. By just simply enter your tracking number you are in full control of your goods location.
                         </p>
                         <Button background={"#2F80ED"} color={'white'} content={"Get Started"} border={'none'} wh={'600'}/>
                     </aside>
-                    <div style={{width:'400px'}}><img data-aos="fade-up-left" src={litimg}></img></div>
+                    <div style={{width:'400px'}}><img data-aos="fade-up" src={litimg}></img></div>
                 </div>
                 </div>
                 <div style={{background:'#F4F7FA'}}>
                 <div style={{padding:'70px 0px'}} className='lit'>
-                <div style={{width:'400px'}}><img data-aos="fade-right" src={time}></img></div>
-                <aside data-aos="fade-left">
+                <div style={{width:'400px'}}><img data-aos="fade-in" src={time}></img></div>
+                <aside data-aos="fade-in">
                         <h3 style={{width:'200px'}}>Flexible rates and convenient 
 transit times.</h3>
                         <p>Enjoy the convenience of our flexible pick up service option - which means we collect your consignment at a time that suits you. We can also schedule regular daily pick-ups at fixed times or on select days. These services are offered at exceptional express delivery service at unbeatable prices.

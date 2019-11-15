@@ -1,8 +1,43 @@
 .trac-cont {
-    width: 100%;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: calc(100vh - 100px);
+    color: #333333;
+}
+.trac-cont h1 {
+    margin-left: -30px;
+}
+.track-p {
+    margin-top: -15px;
+    font-size: 13px;
+    margin-left: -25px;
+}
+.form {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
+    /* justify-content: center; */
+    margin-left: -30px;
+    margin-top: 20px;
+}
+.form input {
+    padding: 15px 0px;
+    border: none;
+    background: white;
+    width:70%;
+}
+.form input::placeholder {
+    padding: 20px;
+}
+.track-btn {
+    padding: 15px 30px;
+    background:  var(--main-color);
+    border: 0px;
+    color: white;
 }
 .location-cont {
     width: 350px;
@@ -55,4 +90,26 @@
     .loc-cont {
         width: 100%;
     }
+    
+    .trac-img {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    .trac-img img {
+        width: 70%;
+        margin: 0px auto;
+    }
+    .trac-cont h1, .track-p {
+        text-align: center;
+    }
+    .form {
+        justify-content: center;
+        margin-left: 0px;
+    }   
+    
+    /* .track-btn {
+        margin-left: 0px;
+        margin-top: 20px;
+    }  */
 }

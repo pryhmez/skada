@@ -1,0 +1,13 @@
+.mod-cont {
+    width: calc(100% - 300px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+}
+
+@media(max-width:1082px) {
+    .mod-cont{
+        width:100%
+    }
+}
