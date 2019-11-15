@@ -1,17 +1,47 @@
 import React, { Component } from 'react';
+import Table from "./Table"
  
 class Pending extends Component {
-    state = {  }
+    state = { 
+        table:[
+            {
+                id:1,
+                goods:"Food",
+                content:"Chicken",
+                contact:"09088377288"
+            },
+            {
+                id:2,
+                goods:"Food",
+                content:"Chicken",
+                contact:"09088377288"
+            },
+            {
+                id:3,
+                goods:"Food",
+                content:"Chicken",
+                contact:"09088377288"
+            },
+            {
+                id:4,
+                goods:"Food",
+                content:"Chicken",
+                contact:"09088377288"
+            },
+            {
+                id:5,
+                goods:"Food",
+                content:"Chicken",
+                contact:"09088377288"
+            }
+        ]
+     }
     render() { 
         return ( 
             <div>
                 <div className="delivery-nav-cont">
                 <div className="delivery-nav">
-                    <h1>PENDING</h1>
-                    {/* <div className='del-lik'>In-Transit</div>
-                    <div className='del-lik'>Delivered</div>
-                    <div className='del-lik del-active'>Pending</div> */}
-                
+                    <Table table={this.state.table} />
                 </div>
             </div>
             </div>

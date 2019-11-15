@@ -15,7 +15,7 @@ const Navi = (props) => {
     const authContext = useContext(AuthContext);
 	// const alertContext = useContext(AlertContext)
 	// const { setAlert } = alertContext;
-    const { logout, user } = authContext;
+    const { user } = authContext;
     const { businessName } = user.user
     // const { user } = props;
     // const { businessName } = user;
@@ -30,7 +30,7 @@ const Navi = (props) => {
 			},
 			{
 				name: 'Delivery Status',
-				route: '/schedule',
+				route: '/delivery status',
 				active: 'active1',
 				icon: Two
 			},
@@ -45,20 +45,10 @@ const Navi = (props) => {
                 route:'managewallet',
                 active:'active3',
                 icon:Four
-            },
-			{
-				name: 'Logout',
-				route: '',
-				active: 'active4',
-				icon: Five
-			}
+            }
 		]
     });
-    const handleClick = (name) => {
-        if(name === 'Logout') {
-            logout()
-        }
-    }
+    
     return (
         <ProductConsumer>
             {(value) => {
@@ -81,7 +71,6 @@ const Navi = (props) => {
                                         to={data.route}
                                         className="navline"
                                         activeClassName={data.active}
-                                        onClick={()=>handleClick(data.name)}
                                     >
                                         <img style={{ marginRight: '15px', marginTop: '5px' }} src={data.icon} />
                                         {data.name}
@@ -89,6 +78,12 @@ const Navi = (props) => {
                                 </aside>
                             </div>
                         ))}
+                        <aside onClick={value.handleLogModal} style={{color:'white',width:'100%',marginTop:'40px',cursor:'pointer'}}>
+                            <aside style={{paddingLeft:'80px'}}>
+                                <img style={{ marginRight: '15px', marginTop: '5px' }} src={Five} />
+                                Logout
+                                </aside>
+                                </aside>
                         <div style={{ marginTop: '40px', paddingLeft: '80px' }}>
                             <Button />
                         </div>

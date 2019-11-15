@@ -7,7 +7,8 @@ class ProductProvider extends Component {
         isFalse: false,
         hide: false,
         display:false,
-        paydrop : false
+        paydrop : false,
+        logoutModal: false
     }
 
     handlePayDrop = () => {
@@ -24,6 +25,10 @@ class ProductProvider extends Component {
     handleDisplay = () => {
         this.setState(prevState => ({ display: !prevState.display }))
     }
+
+    handleLogModal=()=>{
+        this.setState({logoutModal:!this.state.logoutModal})
+    }
     render() { 
         return ( 
             <ProductContext.Provider  value={{
@@ -34,7 +39,9 @@ class ProductProvider extends Component {
                 display:this.state.display,
                 dis:this.handleDisplay,
                 paydrop:this.state.paydrop,
-                handlePayDrop:this.handlePayDrop
+                handlePayDrop:this.handlePayDrop,
+                handleLogModal:this.handleLogModal,
+                logout:this.state.logoutModal
             }}>
                 {this.props.children}
             </ProductContext.Provider>
