@@ -30,7 +30,7 @@ const Navi = (props) => {
 			},
 			{
 				name: 'Delivery Status',
-				route: '/delivery status',
+				route: '/delivery_status',
 				active: 'active1',
 				icon: Two
 			},
@@ -85,7 +85,7 @@ const Navi = (props) => {
                                 </aside>
                                 </aside>
                         <div style={{ marginTop: '40px', paddingLeft: '80px' }}>
-                            <Button />
+                            <Link to="/schedule"><Button/></Link>
                         </div>
                     </div>
                 );

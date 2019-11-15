@@ -47,7 +47,7 @@
 .pack-img {
     width: 300px;
     height: 250px;
-    background-image: url("../shpic/1.jpg");
+    background-image: url("../assets/1.jpg");
     background-size: cover;
 }
 .three {
