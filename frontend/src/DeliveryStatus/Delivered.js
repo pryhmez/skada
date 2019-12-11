@@ -41,7 +41,7 @@ class Delivered extends Component {
             <div>
                 <div className="delivery-nav-cont">
                 <div className="delivery-nav">
-                    <Table table={this.state.table}/>
+                    <Table table={this.props.goods}/>
                 </div>
             </div>
             </div>

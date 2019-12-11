@@ -5,13 +5,14 @@ import "../css/Stat.css"
 class Statboard extends Component {
     state = {  }
     render() { 
+        const { walletInfo : {wallet}} = this.props
         return ( 
             <div className="stat-cont">
                 <div className="stat">
                     <h4>Skada Wallet Balance</h4>
                     <aside className='ht'>
                     <ProductConsumer>
-                    {value=>{return(<h1 style={{fontSize:'54px'}}>{value.hidden?"N XXX.XX":"N 500.00"}</h1>)}}
+                    {value=>{return(<h1 style={{fontSize:'54px'}}>&#8358;{value.hidden?"N XXX.XX":  ((wallet.length > 0) ? 'hia': 0)}</h1>)}}
                     </ProductConsumer>   
                     <div style={{flex:'1'}}></div>
                     <ProductConsumer>

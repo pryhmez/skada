@@ -396,11 +396,16 @@ class Receiver extends Component {
 		const { history } = this.props;
 		console.log(history)
 		if(this.state.payMethod){
-			this.props.history.push({
-                pathname: '/scheduleDetails',
-                state: { orderDetails : this.state }
-			  })
-			  console.log("hello")
+			if( this.state.payMethod === "wallet" ){
+				window.location.assign(`http://skada.herokuapp.com/api/wallet/pay?amount=${this.state.amount}`);
+			} else {
+				this.props.history.push({
+					pathname: '/scheduleDetails',
+					state: { orderDetails : this.state }
+				  })
+				  console.log("hello")
+			}
+		
 		}
 		
 	}
