@@ -5,6 +5,7 @@ import Loading from '../components/Loading'
 import Navi from "../Dashboard/components/Navi";
 import Side from "./DeliveryStatusSide"
 import TopNav from './DeliveryNav';
+import { serverlUrl } from '../Utils/ServerUrl';
  
 const DeliveryStatus = () => {
     const authContext = useContext(AuthContext)
@@ -19,7 +20,7 @@ const DeliveryStatus = () => {
 			}
         };
        
-        let response = await fetch(`/api/user/dashboard?id=${_id}`, {
+        let response = await fetch(`${serverlUrl}/api/user/dashboard?id=${_id}`, {
             method: 'get',
             headers: config.headers
         });

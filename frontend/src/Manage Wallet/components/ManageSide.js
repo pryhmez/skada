@@ -5,7 +5,7 @@ import Wallet from "../../Dashboard/components/Statboard";
 import Loading from '../../components/Loading'
 import AddWallet from "./AddWallet";
 import {ProductConsumer} from "../../Context/Context"
-
+import { serverlUrl } from '../../Utils/ServerUrl';
 
 
 const ManageSide = () => {
@@ -21,7 +21,7 @@ const ManageSide = () => {
 			}
         };
        
-        let response = await fetch(`/api/user/dashboard?id=${_id}`, {
+        let response = await fetch(`${serverlUrl}/api/user/dashboard?id=${_id}`, {
             method: 'get',
             headers: config.headers
         });

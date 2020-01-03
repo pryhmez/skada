@@ -6,6 +6,7 @@ import Deliver from "./Delivery";
 import {ProductConsumer, withState} from "../../Context/Context";
 import Loading from '../../components/Loading'
 import "../css/Side.css"
+import { serverlUrl } from '../../Utils/ServerUrl';
 
  const DashSide = () => {
     const authContext = useContext(AuthContext)
@@ -20,7 +21,7 @@ import "../css/Side.css"
 			}
         };
        
-        let response = await fetch(`/api/user/dashboard?id=${_id}`, {
+        let response = await fetch(`${serverlUrl}/api/user/dashboard?id=${_id}`, {
             method: 'get',
             headers: config.headers
         });

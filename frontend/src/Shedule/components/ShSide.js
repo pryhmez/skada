@@ -7,6 +7,7 @@ import Package from './Package';
 import Send from './Send';
 import { Link } from 'react-router-dom';
 import '../css/Shside.css'
+import { serverlUrl } from '../../Utils/ServerUrl';
 
 const Side = (props) => {
 	const authContext = useContext(AuthContext);
@@ -52,7 +53,7 @@ const Side = (props) => {
         req.sendersName = sendersName
         req.sendersPhone = sendersPhone
         console.log(req)
-        let response = await fetch('/api/schedule/create', {
+        let response = await fetch(`${serverlUrl}/api/schedule/create`, {
             method: 'post',
             headers: config.headers,
             body: JSON.stringify(req)

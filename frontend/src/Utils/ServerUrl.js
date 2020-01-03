@@ -1,0 +1,1 @@
+export const serverlUrl = "http://skada.herokuapp.com"
