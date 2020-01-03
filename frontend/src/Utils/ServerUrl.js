@@ -1,1 +1,1 @@
-export const serverlUrl = "http://skada.herokuapp.com"
+export const serverlUrl = "https://skada.herokuapp.com"
