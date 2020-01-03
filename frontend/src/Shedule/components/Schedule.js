@@ -288,7 +288,7 @@ function AutocompleteDirectionsHandler(map, pickUpRef, dropOffRef, parenthis) {
 	this.directionsDisplay.setMap(map);
 	const options = {
 		componentRestrictions: { country: 'ng' },
-		placeIdOnly: true
+		fields: ['place_id', 'name', 'types']
 	};
 	console.log("am executing")
 	const pickOffAutocomplete = new google.maps.places.Autocomplete(pickOffInput, options);
