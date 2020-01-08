@@ -67,6 +67,7 @@
  .schedule-goodsDesc__1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
     margin-bottom: 1.5rem;
 }
 
@@ -91,6 +92,9 @@
     margin-bottom: 2rem;
     height: 45px;
     background-color: #fff;   
+ }
+ .schedule-map {
+    height: 92vh;
  }
  .schedule-describe {
     height: 55px;  
@@ -175,3 +179,19 @@
     background: #E1DFDD;
     color: #9F9D9D;
 }
+
+@media (max-width:900px){
+    .schedule {
+        grid-template-columns: none;
+        background-color: #ffffff;
+        height: 100vh;
+    }
+    .schedule-form {
+        order: 2;
+        background-color: #ffffff;
+    }
+    .schedule-map {
+        height: 75vh;
+     }
+}
+  

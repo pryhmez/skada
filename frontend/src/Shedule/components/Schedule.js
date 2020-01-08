@@ -257,8 +257,8 @@ class Shedule extends Component {
 											<div
 												className="card-block"
 												id="map"
-												style={{ height: '92vh' }}
 												ref={this.mapRef}
+												className="schedule-map"
 											/>
 										</div>
 									</section>
