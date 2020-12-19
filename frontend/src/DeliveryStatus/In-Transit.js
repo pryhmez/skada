@@ -35,11 +35,13 @@ class InTransit extends Component {
         }
     ] }
     render() { 
+    console.log(this.props.goods)
+
         return ( 
             <div>
                 <div className="delivery-nav-cont">
                 <div className="delivery-nav">
-                    <Table table={this.state.table}/>
+                    <Table table={this.props.goods}/>
                 </div>
             </div>
             </div>

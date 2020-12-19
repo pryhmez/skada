@@ -50,3 +50,9 @@
         width: 100%;
     }
 }
+ 
+@media (max-width:600px){
+    .pay-card-container {
+        margin-left: 20px;
+    }
+}

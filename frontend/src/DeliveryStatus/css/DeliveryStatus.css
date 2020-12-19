@@ -44,7 +44,8 @@
 
 .delivery-nav-cont table,td {
 	border-bottom:0.1px solid #82828241;
-	padding:25px 0px;
+    padding:25px 5px;
+    width: inherit;
 	text-align:center;
 	border-collapse:collapse;
 	font-family:Arial;
@@ -61,7 +62,6 @@
     display: -ms-flexbox;
     display: flex;
     width: 100%;
-    padding: 0px 20px;
 }
 .del-lik {
     font-size: 13px;

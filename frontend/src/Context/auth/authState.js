@@ -2,6 +2,8 @@ import React, { useReducer } from 'react';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
 import { REGISTER_SUCCESS, REGISTER_FAILED, LOGIN_FAILED, LOGOUT, LOGIN_VERIFY, LOGIN_SUCCESS, AUTH_ERROR, CLEAR_MESSAGES, LOADING, USER_LOADED } from '../Types';
+import { serverlUrl } from '../../Utils/ServerUrl';
+
 
 const AuthState = (props) => {
 	const initailState = {
@@ -24,7 +26,7 @@ const AuthState = (props) => {
 
 		try {
 			await dispatch({ type: LOADING })
-			const response = await fetch('/api/user/signup', {
+			const response = await fetch(`${serverlUrl}/api/user/signup`, {
 				method: 'post',
 				headers: config.headers,
 				body: JSON.stringify(registerData)
@@ -56,7 +58,7 @@ const AuthState = (props) => {
 	const resendRegEmail = async (email) => {
 		console.log("email", email)
 		try {
-			const response = await fetch('/api/user/resend', {
+			const response = await fetch(`${serverlUrl}/api/user/resend`, {
 				method: 'post',
 				headers: config.headers,
 				body: JSON.stringify({email})
@@ -94,7 +96,7 @@ const AuthState = (props) => {
 		console.log(loginData)
 		try {
 			dispatch({ type: LOADING })
-			const response = await fetch('/api/user/login', {
+			const response = await fetch(`${serverlUrl}/api/user/login`, {
 				method: 'post',
 				headers: config.headers,
 				body: JSON.stringify(loginData)
@@ -141,7 +143,7 @@ const AuthState = (props) => {
 		};
 
 		try {
-			const response = await fetch('/api/user/login', {
+			const response = await fetch(`${serverlUrl}/api/user/login`, {
 				method: 'get',
 				headers: config.headers
 			});

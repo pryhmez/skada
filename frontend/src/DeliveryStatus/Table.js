@@ -8,18 +8,18 @@ class Table extends Component {
         return ( 
             <table>
                         <tr style={{color:'#2F80ED'}}>
-                            <th>Order ID</th>
-                            <th>Goods Content</th>
-                            <th>ETD</th>
-                            <th>recipient’s Contact</th>
+                            <th>senders Phone</th>
+                            <th>pick Up</th>
+                            <th>delivery</th>
+                            <th>Good's Nature</th>
                         </tr>
                         <br/>
                         {this.props.table.map((data,i)=>(
                             <tr key={i} className='del-tr'>
-                                <td>{data.id}</td>
-                                <td>{data.goods}</td>
-                                <td>{data.content}</td>
-                                <td>{data.contact}</td>
+                                <td>{data.sendersPhone}</td>
+                                <td>{data.pickUpPoint}</td>
+                                <td>{data.deliveryPoint}</td>
+                                <td>{data.natureOfGood}</td>
                             </tr>
                         ))}
                     </table>

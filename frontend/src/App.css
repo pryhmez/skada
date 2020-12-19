@@ -12,7 +12,12 @@
     --success-color: #28a745;
     --white-color: #ffffff;
   }
-  
+ 
+  @media (max-width:600px){
+    body {
+      font-size: 80%;
+    }
+}
 .textDeco-none {
     text-decoration: none;
     color: var(--primary-color);
@@ -36,6 +41,13 @@
     top: 2%;
     padding: 5px 1rem;
   }
+  @media (max-width:900px){
+    .alert {
+       left: 0;
+       top: 2%;
+       padding: 5px 1rem;
+     }
+}
   
   /* 
   
